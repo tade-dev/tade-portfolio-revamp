@@ -64,11 +64,17 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				// Portfolio custom colors
-				portfolio: {
-					blue: '#0EA5E9',
-					darkBlue: '#1A1F2C',
-					teal: '#33C3F0',
-					lightGray: '#F6F6F7',
+				gray: {
+					50: '#fafafa',
+					100: '#f5f5f5',
+					200: '#e5e5e5',
+					300: '#d4d4d4',
+					400: '#a3a3a3',
+					500: '#737373',
+					600: '#525252',
+					700: '#404040',
+					800: '#262626',
+					900: '#171717',
 				},
 			},
 			borderRadius: {
@@ -121,7 +127,7 @@ export default {
 				'slide-in': 'slide-in 0.5s ease-out'
 			},
 			fontFamily: {
-				'sans': ['Inter', 'sans-serif'],
+				'urbanist': ['Urbanist', 'sans-serif'],
 				'mono': ['JetBrains Mono', 'monospace'],
 			}
 		}

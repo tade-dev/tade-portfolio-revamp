@@ -33,8 +33,8 @@ const Header = () => {
         scrolled ? "bg-white/90 shadow-sm backdrop-blur-md py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold heading-gradient">
+      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
+        <a href="#home" className="text-2xl font-medium text-gray-800">
           DevPortfolio
         </a>
 
@@ -44,13 +44,13 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-700 hover:text-portfolio-blue font-medium transition-colors"
+              className="text-gray-600 hover:text-gray-800 font-medium transition-colors"
             >
               {item.label}
             </a>
           ))}
-          <Button className="bg-portfolio-blue hover:bg-portfolio-teal">
-            <a href="#contact">Hire Me</a>
+          <Button className="bg-gray-800 hover:bg-gray-700 rounded-md">
+            <a href="#contact">Contact</a>
           </Button>
         </nav>
 
@@ -66,20 +66,20 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white p-4 absolute top-full left-0 right-0 shadow-md">
+        <div className="md:hidden bg-white p-4 absolute top-full left-0 right-0 shadow-md animate-fade-in">
           <nav className="flex flex-col space-y-4">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-gray-700 hover:text-portfolio-blue font-medium transition-colors px-2 py-1"
+                className="text-gray-600 hover:text-gray-800 font-medium transition-colors px-2 py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
-            <Button className="bg-portfolio-blue hover:bg-portfolio-teal w-full">
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>Hire Me</a>
+            <Button className="bg-gray-800 hover:bg-gray-700 rounded-md w-full">
+              <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
             </Button>
           </nav>
         </div>

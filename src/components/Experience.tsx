@@ -35,43 +35,43 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-white">
+    <section id="experience" className="bg-gray-50">
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">Experience & Skills</h2>
+        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center">Experience & Skills</h2>
         <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           With 6 years of combined mobile development experience, I've mastered both cross-platform and native approaches.
         </p>
 
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-10 animate-fade-in">
-            <h3 className="text-2xl font-semibold flex items-center">
-              <Award className="mr-3 text-portfolio-blue" /> Experience
+            <h3 className="text-2xl font-medium flex items-center">
+              <Award className="mr-3 text-gray-500" /> Experience
             </h3>
             
-            <div className="relative pl-8 border-l-2 border-gray-200 space-y-14">
+            <div className="relative pl-8 border-l border-gray-200 space-y-14">
               {timeline.map((item, index) => (
                 <div 
                   key={index} 
                   className="relative animate-slide-in"
-                  style={{ animationDelay: `${index * 200}ms` }}
+                  style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="absolute -left-[25px] w-12 h-12 bg-portfolio-blue/10 rounded-full flex items-center justify-center">
-                    <Briefcase className="text-portfolio-blue" size={20} />
+                  <div className="absolute -left-[14px] w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center">
+                    <Briefcase className="text-gray-500" size={16} />
                   </div>
                   <div className="flex items-center text-sm text-gray-500 mb-1">
                     <Calendar size={14} className="mr-2" /> {item.year}
                   </div>
                   <h4 className="text-xl font-medium">{item.title}</h4>
-                  <p className="text-portfolio-blue font-medium">{item.company}</p>
-                  <p className="text-gray-600 mt-2">{item.description}</p>
+                  <p className="text-gray-600 font-medium">{item.company}</p>
+                  <p className="text-gray-500 mt-2">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
           
           <div>
-            <h3 className="text-2xl font-semibold flex items-center mb-10">
-              <Award className="mr-3 text-portfolio-blue" /> Skills
+            <h3 className="text-2xl font-medium flex items-center mb-10">
+              <Award className="mr-3 text-gray-500" /> Skills
             </h3>
             
             <div className="space-y-7">
@@ -85,9 +85,9 @@ const Experience = () => {
                     <span className="font-medium">{skill.name}</span>
                     <span className="text-gray-500">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 h-2 rounded-full">
+                  <div className="w-full bg-gray-200 h-1.5 rounded-full">
                     <div 
-                      className="bg-gradient-to-r from-portfolio-blue to-portfolio-teal h-full rounded-full"
+                      className="bg-gray-600 h-full rounded-full"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>

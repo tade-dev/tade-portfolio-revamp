@@ -60,9 +60,9 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-white">
+    <section id="contact" className="bg-gray-50">
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-center">Get In Touch</h2>
+        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center">Get In Touch</h2>
         <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
           Interested in working together? Feel free to contact me for any project or collaboration.
         </p>
@@ -76,14 +76,14 @@ const Contact = () => {
                 className="flex items-start animate-fade-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="bg-blue-50 p-3 rounded-lg mr-4">
-                  <item.icon className="text-portfolio-blue" />
+                <div className="bg-gray-100 p-3 rounded-md mr-4">
+                  <item.icon className="text-gray-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">{item.title}</h3>
+                  <h3 className="font-medium text-lg">{item.title}</h3>
                   <a 
                     href={item.link}
-                    className="text-gray-600 hover:text-portfolio-blue transition-colors"
+                    className="text-gray-600 hover:text-gray-800 transition-colors"
                   >
                     {item.details}
                   </a>
@@ -93,7 +93,7 @@ const Contact = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="md:col-span-2 bg-white rounded-xl p-6 shadow-lg border border-gray-100">
+          <div className="md:col-span-2 bg-white rounded-md p-6 shadow-sm border border-gray-100 animate-scale-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
@@ -144,7 +144,7 @@ const Contact = () => {
               
               <Button 
                 type="submit" 
-                className="w-full bg-portfolio-blue hover:bg-portfolio-teal p-6"
+                className="w-full bg-gray-800 hover:bg-gray-700 p-6 rounded-md"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
