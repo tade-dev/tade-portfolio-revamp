@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -11,7 +11,6 @@ const Header = () => {
     { label: "Home", href: "#home" },
     { label: "Experience", href: "#experience" },
     { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -49,8 +48,15 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <Button className="bg-gray-800 hover:bg-gray-700 rounded-md">
-            <a href="#contact">Contact</a>
+          <Button className="bg-gray-800 hover:bg-gray-700 rounded-md flex items-center gap-2">
+            <FileText size={18} />
+            <a 
+              href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              My Resume
+            </a>
           </Button>
         </nav>
 
@@ -78,8 +84,16 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="bg-gray-800 hover:bg-gray-700 rounded-md w-full">
-              <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+            <Button className="bg-gray-800 hover:bg-gray-700 rounded-md w-full flex items-center justify-center gap-2">
+              <FileText size={18} />
+              <a 
+                href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                My Resume
+              </a>
             </Button>
           </nav>
         </div>

@@ -20,10 +20,16 @@ const Hero = () => {
           
           <div className="flex flex-wrap gap-4 mb-8">
             <Button className="bg-gray-800 hover:bg-gray-700 text-lg px-6 py-5 rounded-md">
-              <a href="#projects">View My Work</a>
+              <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Github size={20} />
+                View My Work
+              </a>
             </Button>
             <Button variant="outline" className="text-lg px-6 py-5 border-gray-300 text-gray-700 rounded-md">
-              <a href="#contact">Contact Me</a>
+              <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <Twitter size={20} />
+                Connect
+              </a>
             </Button>
           </div>
           
