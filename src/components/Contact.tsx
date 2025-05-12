@@ -42,19 +42,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: "contact@yourportfolio.dev",
-      link: "mailto:contact@yourportfolio.dev"
+      details: "hi@tade.me",
+      link: "mailto:hi@tade.me"
     },
     {
       icon: Phone,
       title: "Phone",
-      details: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      details: "+2348163421203",
+      link: "tel:+2348163421203"
     },
     {
       icon: MapPin,
       title: "Location",
-      details: "San Francisco, California",
+      details: "Abuja, Nigeria",
       link: "#"
     }
   ];

@@ -35,7 +35,7 @@ const Header = () => {
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="text-2xl font-medium text-gray-800">
-          DevPortfolio
+          Tade.ME
         </a>
 
         {/* Desktop Navigation */}
