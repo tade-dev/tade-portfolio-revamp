@@ -1,5 +1,5 @@
 
-import { Calendar, Award, Briefcase } from "lucide-react";
+import { Calendar, Award, Briefcase, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const skills = [
@@ -15,23 +15,31 @@ const Experience = () => {
   
   const timeline = [
     {
-      year: "2023 - Present",
-      title: "Senior Mobile Developer",
-      company: "Tech Innovations Ltd",
-      description: "Leading cross-platform mobile app development using Flutter for enterprise clients. Mentoring junior developers and architecting complex mobile applications."
+      year: "September 2024 - Present",
+      title: "Mobile Engineer",
+      company: "Zabira Technologies",
+      companyLink: "#",
+      location: "Lagos, Nigeria (Remote)",
+      description: [
+        "Developed and maintained core features in Zabira's mobile app, supporting over 3,000+ daily active users in crypto trading and gift card exchange, using Flutter for both Android and iOS platforms.",
+        "Implemented fiat payment and withdrawal flows, integrating KYC and bank account verification systems that reduced failed transactions by over 35% and improved onboarding time by 20%.",
+        "Collaborated with backend and product teams to ship biweekly updates, resolving an average of 15+ issues per sprint, optimizing load times by 30%, and maintaining app stability at > 99.5% crash-free rate."
+      ],
+      technologies: "Flutter, Swift, Firebase, Dart, BLOC, GIT"
     },
     {
-      year: "2021 - 2023",
-      title: "iOS Developer",
-      company: "Apple Solutions Inc",
-      description: "Specialized in native iOS development using Swift and SwiftUI. Implemented complex UI animations and integrated with various backend services."
-    },
-    {
-      year: "2019 - 2021",
-      title: "Flutter Developer",
-      company: "Mobile Creations Co",
-      description: "Developed and maintained multiple Flutter applications. Worked on implementing responsive UIs and integrating Firebase services."
-    },
+      year: "November 2022 - July 2024",
+      title: "Lead Mobile App Developer",
+      company: "Scnip Capitol Ltd",
+      companyLink: "#",
+      location: "Abuja, Nigeria (Hybrid)",
+      description: [
+        "Led the development of cross-platform mobile apps for multiple clients, delivering scalable, high-performance solutions using Flutter across fintech and enterprise platforms.",
+        "Designed modular architectures and reusable components, reducing development time by 30% and ensuring easier maintenance across diverse client requirements.",
+        "Managed and mentored a team of 3 developers, driving code quality, sprint planning, and CI/CD workflows that achieved a 95% on-time delivery rate across 5+ projects."
+      ],
+      technologies: "Flutter, Firebase, Dart, Getx, GIT, Shorebird"
+    }
   ];
 
   return (
@@ -61,9 +69,23 @@ const Experience = () => {
                   <div className="flex items-center text-sm text-gray-500 mb-1">
                     <Calendar size={14} className="mr-2" /> {item.year}
                   </div>
-                  <h4 className="text-xl font-medium">{item.title}</h4>
-                  <p className="text-gray-600 font-medium">{item.company}</p>
-                  <p className="text-gray-500 mt-2">{item.description}</p>
+                  <h4 className="text-xl font-medium flex items-center gap-2">
+                    {item.title}
+                  </h4>
+                  <p className="text-gray-600 font-medium flex items-center gap-2">
+                    {item.company} 
+                    <a href={item.companyLink} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={14} className="text-gray-400 hover:text-gray-600" />
+                    </a>
+                  </p>
+                  <p className="text-gray-500 text-sm mt-1 mb-2">
+                    {item.technologies} | {item.location}
+                  </p>
+                  <ul className="text-gray-500 space-y-2 list-disc pl-5">
+                    {item.description.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

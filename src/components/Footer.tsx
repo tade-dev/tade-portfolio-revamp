@@ -4,12 +4,6 @@ import { Github, Linkedin, Twitter, Heart } from "lucide-react";
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
-  const footerLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-  ];
-  
   return (
     <footer className="bg-white border-t border-gray-100">
       <div className="max-w-5xl mx-auto px-6 py-12">
@@ -22,18 +16,6 @@ const Footer = () => {
               Specialized in delivering high-quality mobile applications with Flutter and native iOS development.
             </p>
           </div>
-          
-          <nav className="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-6 md:mb-0">
-            {footerLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-500 hover:text-gray-800 transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
           
           <div className="flex space-x-5">
             <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-800 transition-colors">
