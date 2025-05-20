@@ -5,11 +5,12 @@ const Experience = () => {
   const skills = [
     { name: "Flutter", level: 90 },
     { name: "Dart", level: 90 },
-    { name: "SwiftUI", level: 80 },
+    { name: "SwiftUI", level: 90 },
     { name: "Swift", level: 85 },
     { name: "Firebase", level: 85 },
     { name: "RESTful APIs", level: 90 },
-    { name: "UI/UX Design", level: 75 },
+    { name: "Javascript", level: 80 },
+    { name: "Vapor", level: 75 },
     { name: "Git & CI/CD", level: 80 },
   ];
   
@@ -18,7 +19,7 @@ const Experience = () => {
       year: "September 2024 - Present",
       title: "Mobile Engineer",
       company: "Zabira Technologies",
-      companyLink: "#",
+      companyLink: "https://www.zabira.com",
       location: "Lagos, Nigeria (Remote)",
       description: [
         "Developed and maintained core features in Zabira's mobile app, supporting over 3,000+ daily active users in crypto trading and gift card exchange, using Flutter for both Android and iOS platforms.",
@@ -31,7 +32,7 @@ const Experience = () => {
       year: "November 2022 - July 2024",
       title: "Lead Mobile App Developer",
       company: "Scnip Capitol Ltd",
-      companyLink: "#",
+      companyLink: "https://www.scnip.com",
       location: "Abuja, Nigeria (Hybrid)",
       description: [
         "Led the development of cross-platform mobile apps for multiple clients, delivering scalable, high-performance solutions using Flutter across fintech and enterprise platforms.",
