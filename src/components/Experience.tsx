@@ -1,14 +1,13 @@
-
 import { Calendar, Award, Briefcase, ExternalLink } from "lucide-react";
 
 const Experience = () => {
   const skills = [
-    { name: "Flutter", level: 90 },
-    { name: "Dart", level: 90 },
+    { name: "Flutter", level: 95 },
+    { name: "Dart", level: 92 },
     { name: "SwiftUI", level: 90 },
     { name: "Swift", level: 85 },
     { name: "Firebase", level: 85 },
-    { name: "RESTful APIs", level: 90 },
+    { name: "RESTful APIs", level: 95 },
     { name: "Javascript", level: 80 },
     { name: "Vapor", level: 75 },
     { name: "Git & CI/CD", level: 80 },
