@@ -1,96 +1,143 @@
 
-import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20 pb-10 px-6 relative overflow-hidden">
-      {/* Abstract shapes for fun background */}
-      <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-gradient-to-r from-purple-200 to-indigo-200 opacity-30 blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-72 h-72 rounded-full bg-gradient-to-r from-amber-200 to-yellow-200 opacity-30 blur-3xl"></div>
+    <section id="home" className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black pt-20 pb-10 px-6 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0">
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M0 0h40v40H0z"/%3E%3Cpath d="M0 40V0h40"/%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-gradient-to-r from-emerald-500/5 to-teal-500/5 blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
       
-      <div className="max-w-5xl mx-auto flex flex-col items-center">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Hero content */}
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 py-8">
-          {/* Image section with fun border */}
-          <div className="md:w-5/12 order-1 md:order-2 animate-scale-in relative mb-8 md:mb-0">
-            <div className="relative">
-              {/* Fun geometric elements */}
-              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-amber-400 to-amber-500 rounded-2xl rotate-3 -z-10"></div>
-              <div className="absolute -bottom-4 -left-4 w-full h-full bg-gradient-to-br from-gray-800 to-gray-700 rounded-2xl -rotate-3 -z-10"></div>
-              
-              {/* Profile image */}
-              <div className="relative rounded-xl overflow-hidden border-4 border-white shadow-xl">
-                <img 
-                  src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
-                  alt="Oluwaseun Akintade" 
-                  className="w-full h-auto object-cover"
-                />
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 py-8">
+          {/* Text content */}
+          <div className="lg:w-1/2 text-center lg:text-left animate-fade-in">
+            {/* Status badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 backdrop-blur-sm mb-6 group hover:from-emerald-500/30 hover:to-teal-500/30 transition-all duration-300">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              <span className="text-emerald-300 text-sm font-medium">Available for opportunities</span>
+            </div>
+            
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="text-white">Building</span>{" "}
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text text-transparent animate-pulse">
+                Mobile
+              </span>{" "}
+              <span className="text-white">Excellence</span>
+            </h1>
+            
+            <p className="text-gray-300 text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl">
+              I'm <span className="text-white font-semibold">Oluwaseun Akintade</span>, a passionate mobile developer 
+              crafting beautiful, high-performance applications with <span className="text-blue-400">Flutter</span> and <span className="text-orange-400">Swift</span>.
+            </p>
+            
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8">
+              <div className="text-center group">
+                <div className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">6+</div>
+                <div className="text-gray-400 text-sm">Years Experience</div>
               </div>
+              <div className="text-center group">
+                <div className="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">50+</div>
+                <div className="text-gray-400 text-sm">Projects Built</div>
+              </div>
+              <div className="text-center group">
+                <div className="text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">3K+</div>
+                <div className="text-gray-400 text-sm">Daily Users</div>
+              </div>
+            </div>
+            
+            {/* Call to action buttons */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+              <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl group">
+                <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                  <Code size={22} className="group-hover:rotate-12 transition-transform" />
+                  View Projects
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </Button>
+              
+              <Button variant="outline" className="border-2 border-gray-600 bg-gray-800/50 backdrop-blur-sm text-white text-lg px-8 py-6 rounded-xl hover:bg-gray-700/50 hover:border-gray-500 shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] group">
+                <Mail size={22} className="group-hover:rotate-12 transition-transform" />
+                Get In Touch
+              </Button>
             </div>
           </div>
           
-          {/* Text content */}
-          <div className="md:w-7/12 order-2 md:order-1 animate-fade-in text-center md:text-left">
-            <div className="inline-block px-4 py-1 rounded-full bg-gray-800 text-white text-sm font-medium mb-4">
-              <span className="flex items-center gap-1">
-                <Sparkles size={14} className="text-amber-400" />
-                Mobile & iOS Developer
-              </span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight text-gray-800">
-              Hey, I'm <span className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">Oluwaseun</span>
-            </h1>
-            
-            <p className="text-gray-600 text-lg md:text-xl mb-8 max-w-2xl">
-              I transform ideas into exceptional mobile experiences. With 4 years of Flutter and 2 years 
-              of native iOS development expertise, I build beautiful, high-performance applications that 
-              your users will love.
-            </p>
-            
-            {/* Call to action buttons */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-              <Button className="bg-gray-800 hover:bg-gray-700 text-lg px-6 py-6 rounded-xl flex items-center gap-2 shadow-lg transform transition-all hover:translate-y-1">
-                <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <Github size={22} />
-                  View My Work
-                </a>
-              </Button>
-              <Button variant="outline" className="text-lg px-6 py-6 border-2 border-gray-300 text-gray-700 rounded-xl hover:bg-gray-50 shadow-lg transform transition-all hover:translate-y-1">
-                <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                  <Twitter size={22} />
-                  Connect
-                </a>
-              </Button>
-            </div>
-            
-            {/* Social links */}
-            <div className="flex space-x-5 mb-10 justify-center md:justify-start">
-              <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" 
-                 className="text-gray-500 hover:text-gray-800 transition-all p-2 hover:bg-gray-100 rounded-full">
-                <Github size={24} />
-              </a>
-              <a href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/" target="_blank" rel="noopener noreferrer" 
-                 className="text-gray-500 hover:text-gray-800 transition-all p-2 hover:bg-gray-100 rounded-full">
-                <Linkedin size={24} />
-              </a>
-              <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" 
-                 className="text-gray-500 hover:text-gray-800 transition-all p-2 hover:bg-gray-100 rounded-full">
-                <Twitter size={24} />
-              </a>
+          {/* Image section */}
+          <div className="lg:w-1/2 relative animate-scale-in">
+            <div className="relative group">
+              {/* Rotating border */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+              
+              {/* Main image container */}
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-full shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
+                <div className="relative rounded-full overflow-hidden border-4 border-gray-700 group-hover:border-gray-600 transition-colors">
+                  <img 
+                    src="/lovable-uploads/c86e15f8-9688-4ca1-9ae6-b3e6e3b2b2e7.png" 
+                    alt="Oluwaseun Akintade" 
+                    className="w-full h-auto object-cover transform transition-all duration-500 group-hover:scale-110"
+                  />
+                  
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+              </div>
+              
+              {/* Floating tech icons */}
+              <div className="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
+                <Code size={20} />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1.5s' }}>
+                <Sparkles size={20} />
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Social links with enhanced animations */}
+        <div className="flex justify-center lg:justify-start space-x-6 mt-12">
+          <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" 
+             className="group relative p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
+            <Github size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/" target="_blank" rel="noopener noreferrer" 
+             className="group relative p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
+            <Linkedin size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+          
+          <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" 
+             className="group relative p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
+            <Twitter size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
+        </div>
       </div>
       
-      {/* Scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <a 
         href="#experience" 
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce bg-white p-2 rounded-full shadow-md text-gray-800 hover:text-gray-600 transition-all"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group"
         aria-label="Scroll down"
       >
-        <ChevronDown size={28} />
+        <div className="flex flex-col items-center space-y-2 animate-bounce">
+          <span className="text-gray-400 text-sm font-medium group-hover:text-white transition-colors">Scroll down</span>
+          <div className="p-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 group-hover:text-white group-hover:border-gray-500 transition-all duration-300 group-hover:translate-y-[-2px]">
+            <ChevronDown size={24} />
+          </div>
+        </div>
       </a>
     </section>
   );
