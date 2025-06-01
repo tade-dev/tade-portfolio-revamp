@@ -1,3 +1,4 @@
+
 import { Calendar, Award, Briefcase, ExternalLink } from "lucide-react";
 
 const Experience = () => {
@@ -43,45 +44,55 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-50">
-      <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center">Experience & Skills</h2>
-        <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
-          With 6 years of combined mobile development experience, I've mastered both cross-platform and native approaches.
-        </p>
+    <section id="experience" className="bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-blue-500/5 to-purple-500/5 blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-gradient-to-r from-amber-500/5 to-orange-500/5 blur-3xl"></div>
+      </div>
+      
+      <div className="section-container relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+            Experience & Skills
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            With 4+ years of mobile development experience, I've mastered both cross-platform and native approaches.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-16 mb-20">
           <div className="space-y-10 animate-fade-in">
-            <h3 className="text-2xl font-medium flex items-center">
-              <Award className="mr-3 text-gray-500" /> Experience
+            <h3 className="text-2xl font-bold flex items-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <Award className="mr-3 text-blue-500" /> Experience
             </h3>
             
-            <div className="relative pl-8 border-l border-gray-200 space-y-14">
+            <div className="relative pl-8 border-l-2 border-gradient-to-b from-blue-400 to-purple-400 space-y-14">
               {timeline.map((item, index) => (
                 <div 
                   key={index} 
-                  className="relative animate-slide-in"
+                  className="relative animate-slide-in bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 shadow-sm hover:shadow-md transition-all duration-300"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="absolute -left-[14px] w-7 h-7 bg-gray-100 rounded-full flex items-center justify-center">
-                    <Briefcase className="text-gray-500" size={16} />
+                  <div className="absolute -left-[43px] w-7 h-7 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                    <Briefcase className="text-white" size={16} />
                   </div>
                   <div className="flex items-center text-sm text-gray-500 mb-1">
                     <Calendar size={14} className="mr-2" /> {item.year}
                   </div>
-                  <h4 className="text-xl font-medium flex items-center gap-2">
+                  <h4 className="text-xl font-bold text-gray-800 mb-1">
                     {item.title}
                   </h4>
-                  <p className="text-gray-600 font-medium flex items-center gap-2">
+                  <p className="text-blue-600 font-semibold flex items-center gap-2 mb-2">
                     {item.company} 
                     <a href={item.companyLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={14} className="text-gray-400 hover:text-gray-600" />
+                      <ExternalLink size={14} className="text-blue-400 hover:text-blue-600 transition-colors" />
                     </a>
                   </p>
-                  <p className="text-gray-500 text-sm mt-1 mb-2">
+                  <p className="text-gray-500 text-sm mb-3">
                     {item.technologies} | {item.location}
                   </p>
-                  <ul className="text-gray-500 space-y-2 list-disc pl-5">
+                  <ul className="text-gray-600 space-y-2 list-disc pl-5">
                     {item.description.map((bullet, i) => (
                       <li key={i}>{bullet}</li>
                     ))}
@@ -91,25 +102,25 @@ const Experience = () => {
             </div>
           </div>
           
-          <div>
-            <h3 className="text-2xl font-medium flex items-center mb-10">
-              <Award className="mr-3 text-gray-500" /> Skills
+          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+            <h3 className="text-2xl font-bold flex items-center mb-10 bg-gradient-to-r from-purple-600 to-amber-600 bg-clip-text text-transparent">
+              <Award className="mr-3 text-purple-500" /> Skills
             </h3>
             
             <div className="space-y-7">
               {skills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="animate-fade-in"
+                  className="animate-fade-in bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-gray-200/50 hover:shadow-md transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex justify-between mb-2">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-gray-500">{skill.level}%</span>
+                    <span className="font-semibold text-gray-800">{skill.name}</span>
+                    <span className="text-gray-500 font-medium">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 h-1.5 rounded-full">
+                  <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
                     <div 
-                      className="bg-gray-600 h-full rounded-full"
+                      className="bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 h-full rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>

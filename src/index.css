@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -89,15 +90,15 @@
   }
   
   .project-card {
-    @apply bg-white rounded-md overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md border border-gray-100;
+    @apply bg-white/80 backdrop-blur-sm rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl border border-gray-200/50 hover:border-gray-300/50;
   }
 
   .timeline-dot {
-    @apply absolute w-3 h-3 rounded-full bg-gray-400 left-1/2 transform -translate-x-1/2;
+    @apply absolute w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 left-1/2 transform -translate-x-1/2 shadow-lg;
   }
   
   .timeline-line {
-    @apply absolute h-full w-0.5 bg-gray-200 left-1/2 transform -translate-x-1/2 -z-10;
+    @apply absolute h-full w-0.5 bg-gradient-to-b from-blue-400 to-purple-400 left-1/2 transform -translate-x-1/2 -z-10;
   }
 }
 
@@ -120,6 +121,10 @@
 
   .animate-slide-down {
     animation: slideDown 0.6s ease-out forwards;
+  }
+
+  .font-dancing {
+    font-family: 'Dancing Script', cursive;
   }
 
   @keyframes fadeIn {

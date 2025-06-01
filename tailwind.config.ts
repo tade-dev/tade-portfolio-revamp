@@ -128,6 +128,7 @@ export default {
 			},
 			fontFamily: {
 				'urbanist': ['Urbanist', 'sans-serif'],
+				'dancing': ['Dancing Script', 'cursive'],
 				'mono': ['JetBrains Mono', 'monospace'],
 			}
 		}

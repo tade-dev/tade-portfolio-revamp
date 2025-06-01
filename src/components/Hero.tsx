@@ -87,9 +87,11 @@ const Hero = () => {
               {/* Main image container */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-full shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
                 <div className="relative rounded-full overflow-hidden border-4 border-gray-700 group-hover:border-gray-600 transition-colors">
-                  <div className="w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-                    <div className="text-white/50 text-6xl">👨‍💻</div>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
+                    alt="Oluwaseun Akintade" 
+                    className="w-80 h-80 object-cover rounded-full"
+                  />
                   
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

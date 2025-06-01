@@ -33,10 +33,22 @@ const Header = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className={`text-2xl font-medium transition-colors ${
-          scrolled ? "text-gray-800" : "text-white"
-        }`}>
-          Tade.ME
+        <a href="#home" className="group relative">
+          <span className={`text-2xl font-bold transition-all duration-300 font-dancing cursor-pointer ${
+            scrolled 
+              ? "text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text" 
+              : "text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text"
+          } hover:scale-110 transform group-hover:animate-pulse`}>
+            tade.me
+          </span>
+          {/* Glow effect */}
+          <div className={`absolute inset-0 text-2xl font-bold font-dancing opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+            scrolled 
+              ? "text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text blur-sm" 
+              : "text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text blur-sm"
+          }`}>
+            tade.me
+          </div>
         </a>
 
         {/* Desktop Navigation */}
