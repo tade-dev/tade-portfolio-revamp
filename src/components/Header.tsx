@@ -10,7 +10,7 @@ const Header = () => {
   const menuItems = [
     { label: "Home", href: "#home" },
     { label: "Experience", href: "#experience" },
-    { label: "Projects", href: "#projects" },
+    { label: "Projects", href: "/projects" },
   ];
 
   useEffect(() => {
@@ -33,7 +33,9 @@ const Header = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-medium text-gray-800">
+        <a href="#home" className={`text-2xl font-medium transition-colors ${
+          scrolled ? "text-gray-800" : "text-white"
+        }`}>
           Tade.ME
         </a>
 
@@ -43,17 +45,22 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-600 hover:text-gray-800 font-medium transition-colors"
+              className={`font-medium transition-colors ${
+                scrolled ? "text-gray-600 hover:text-gray-800" : "text-gray-300 hover:text-white"
+              }`}
             >
               {item.label}
             </a>
           ))}
-          <Button className="bg-gray-800 hover:bg-gray-700 rounded-md flex items-center gap-2">
+          <Button className={`rounded-md flex items-center gap-2 ${
+            scrolled ? "bg-gray-800 hover:bg-gray-700" : "bg-white/20 hover:bg-white/30 backdrop-blur-sm"
+          }`}>
             <FileText size={18} />
             <a 
               href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
               target="_blank" 
               rel="noopener noreferrer"
+              className={scrolled ? "text-white" : "text-white"}
             >
               My Resume
             </a>
@@ -62,7 +69,9 @@ const Header = () => {
 
         {/* Mobile Navigation Button */}
         <button
-          className="md:hidden text-gray-700"
+          className={`md:hidden transition-colors ${
+            scrolled ? "text-gray-700" : "text-white"
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >

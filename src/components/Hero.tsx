@@ -3,6 +3,13 @@ import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Dow
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const handleScrollToExperience = () => {
+    const experienceSection = document.getElementById('experience');
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black pt-20 pb-10 px-6 relative overflow-hidden">
       {/* Animated background elements */}
@@ -39,29 +46,25 @@ const Hero = () => {
             
             <p className="text-gray-300 text-xl lg:text-2xl mb-8 leading-relaxed max-w-2xl">
               I'm <span className="text-white font-semibold">Oluwaseun Akintade</span>, a passionate mobile developer 
-              crafting beautiful, high-performance applications with <span className="text-blue-400">Flutter</span> and <span className="text-orange-400">Swift</span>.
+              crafting beautiful, high-performance applications with <span className="text-blue-400">Flutter</span> and <span className="text-orange-400">SwiftUI</span>.
             </p>
             
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8">
               <div className="text-center group">
-                <div className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">6+</div>
+                <div className="text-3xl font-bold text-white group-hover:text-blue-400 transition-colors">4+</div>
                 <div className="text-gray-400 text-sm">Years Experience</div>
               </div>
               <div className="text-center group">
                 <div className="text-3xl font-bold text-white group-hover:text-purple-400 transition-colors">50+</div>
                 <div className="text-gray-400 text-sm">Projects Built</div>
               </div>
-              <div className="text-center group">
-                <div className="text-3xl font-bold text-white group-hover:text-amber-400 transition-colors">3K+</div>
-                <div className="text-gray-400 text-sm">Daily Users</div>
-              </div>
             </div>
             
             {/* Call to action buttons */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl group">
-                <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                <a href="/projects" className="flex items-center gap-3">
                   <Code size={22} className="group-hover:rotate-12 transition-transform" />
                   View Projects
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -84,11 +87,9 @@ const Hero = () => {
               {/* Main image container */}
               <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-full shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
                 <div className="relative rounded-full overflow-hidden border-4 border-gray-700 group-hover:border-gray-600 transition-colors">
-                  <img 
-                    src="/lovable-uploads/c86e15f8-9688-4ca1-9ae6-b3e6e3b2b2e7.png" 
-                    alt="Oluwaseun Akintade" 
-                    className="w-full h-auto object-cover transform transition-all duration-500 group-hover:scale-110"
-                  />
+                  <div className="w-80 h-80 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
+                    <div className="text-white/50 text-6xl">👨‍💻</div>
+                  </div>
                   
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -129,18 +130,18 @@ const Hero = () => {
       </div>
       
       {/* Enhanced scroll indicator */}
-      <a 
-        href="#experience" 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group"
+      <button 
+        onClick={handleScrollToExperience}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group focus:outline-none"
         aria-label="Scroll down"
       >
-        <div className="flex flex-col items-center space-y-2 animate-bounce">
+        <div className="flex flex-col items-center space-y-2 animate-bounce cursor-pointer">
           <span className="text-gray-400 text-sm font-medium group-hover:text-white transition-colors">Scroll down</span>
           <div className="p-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 group-hover:text-white group-hover:border-gray-500 transition-all duration-300 group-hover:translate-y-[-2px]">
             <ChevronDown size={24} />
           </div>
         </div>
-      </a>
+      </button>
     </section>
   );
 };

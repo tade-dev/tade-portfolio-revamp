@@ -1,8 +1,32 @@
 
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const section = sectionRef.current;
+    if (section) {
+      const elements = section.querySelectorAll('.project-card, .section-title, .section-description');
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       title: "Fitness Tracker Pro",
@@ -16,8 +40,8 @@ const Projects = () => {
     {
       title: "E-Commerce Platform",
       subtitle: "iOS Native App",
-      description: "A feature-rich e-commerce mobile application built with Swift and SwiftUI. Implemented complex UI transitions, cart management, payment processing, and push notifications.",
-      tags: ["Swift", "SwiftUI", "CoreData", "Stripe"],
+      description: "A feature-rich e-commerce mobile application built with SwiftUI. Implemented complex UI transitions, cart management, payment processing, and push notifications.",
+      tags: ["SwiftUI", "CoreData", "Stripe", "iOS"],
       imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       githubUrl: "#",
       liveUrl: "#"
@@ -43,10 +67,10 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-white">
+    <section id="projects" className="bg-white" ref={sectionRef}>
       <div className="section-container">
-        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center">Featured Projects</h2>
-        <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+        <h2 className="section-title text-3xl md:text-4xl font-medium mb-3 text-center opacity-0">Featured Projects</h2>
+        <p className="section-description text-gray-600 text-center mb-16 max-w-2xl mx-auto opacity-0">
           Here are some of my recent mobile development projects that showcase my technical skills and design capabilities.
         </p>
         
@@ -54,7 +78,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 animate-fade-in"
+              className="project-card bg-white rounded-md overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 opacity-0"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="aspect-video overflow-hidden">
@@ -109,7 +133,7 @@ const Projects = () => {
         
         <div className="text-center mt-16">
           <Button variant="outline" className="text-lg px-8 py-6 border-gray-300 text-gray-700 rounded-md">
-            <a href="#">View All Projects</a>
+            <a href="/projects">View All Projects</a>
           </Button>
         </div>
       </div>
