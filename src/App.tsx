@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
+import CursorInteraction from "./components/CursorInteraction";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CursorInteraction />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

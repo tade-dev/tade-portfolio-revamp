@@ -1,3 +1,4 @@
+
 import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -77,57 +78,36 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* New hexagonal image design */}
+          {/* Simplified rounded image */}
           <div className="lg:w-1/2 relative animate-scale-in">
             <div className="relative group max-w-sm mx-auto">
-              {/* Outer glowing frame */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-60 transition-all duration-700 animate-pulse transform rotate-3"></div>
+              {/* Outer glow rings */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 blur-xl animate-pulse"></div>
+              <div className="absolute inset-2 rounded-full bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-600/20 blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
               
-              {/* Main container with geometric design */}
-              <div className="relative bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-xl rounded-3xl p-6 shadow-2xl border border-gray-700/50 transform transition-all duration-700 group-hover:scale-105 group-hover:-rotate-1">
-                
-                {/* Inner geometric frame */}
-                <div className="relative bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-2xl p-4 border border-gradient-to-r from-blue-400/30 via-purple-400/30 to-pink-400/30">
-                  
-                  {/* Image container with clip-path */}
-                  <div className="relative overflow-hidden rounded-2xl" style={{
-                    clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
-                  }}>
-                    <div className="aspect-square bg-gradient-to-br from-blue-600/20 to-purple-600/20 p-4">
-                      <img 
-                        src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
-                        alt="Oluwaseun Akintade" 
-                        className="w-full h-full object-cover rounded-xl transform transition-all duration-700 group-hover:scale-110 shadow-lg"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* Animated border overlay */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-70 transition-all duration-700" style={{
-                    background: 'linear-gradient(45deg, #60a5fa, #a855f7, #ec4899)',
-                    WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    WebkitMaskComposite: 'subtract',
-                    mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                    maskComposite: 'subtract'
-                  }}></div>
+              {/* Main image container */}
+              <div className="relative">
+                {/* Animated border */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 animate-spin-slow">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-900 to-gray-900"></div>
                 </div>
                 
-                {/* Decorative corner elements */}
-                <div className="absolute -top-2 -left-2 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-80 animate-ping"></div>
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full opacity-80 animate-ping" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-80 animate-ping" style={{ animationDelay: '2s' }}></div>
-                <div className="absolute -bottom-2 -right-2 w-4 h-4 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full opacity-80 animate-ping" style={{ animationDelay: '0.5s' }}></div>
-              </div>
-              
-              {/* Floating tech icons with updated positioning */}
-              <div className="absolute -top-8 -right-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-4 rounded-2xl shadow-2xl animate-bounce transform transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-blue-400/30" style={{ animationDelay: '0.5s' }}>
-                <Code size={24} />
-              </div>
-              <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl shadow-2xl animate-bounce transform transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-purple-400/30" style={{ animationDelay: '1.5s' }}>
-                <Sparkles size={24} />
-              </div>
-              <div className="absolute top-1/2 -right-12 bg-gradient-to-r from-orange-500 to-amber-500 text-white p-3 rounded-xl shadow-xl animate-bounce transform transition-all duration-300 hover:scale-110 backdrop-blur-sm border border-orange-400/30" style={{ animationDelay: '2.5s' }}>
-                <ArrowRight size={20} />
+                {/* Image */}
+                <div className="relative p-3">
+                  <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400/50 via-purple-500/50 to-pink-500/50 group-hover:scale-105 transition-all duration-500 shadow-2xl">
+                    <img 
+                      src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
+                      alt="Oluwaseun Akintade" 
+                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+                
+                {/* Floating particles */}
+                <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-80"></div>
+                <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute top-1/4 -right-6 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute bottom-1/4 -left-6 w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '1.5s' }}></div>
               </div>
             </div>
           </div>
