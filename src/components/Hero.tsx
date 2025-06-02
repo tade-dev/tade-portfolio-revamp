@@ -72,43 +72,50 @@ const Hero = () => {
               </Button>
               
               <Button variant="outline" className="border-2 border-gray-600 bg-gray-800/50 backdrop-blur-sm text-white text-lg px-8 py-6 rounded-xl hover:bg-gray-700/50 hover:border-gray-500 shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] group">
-                <Mail size={22} className="group-hover:rotate-12 transition-transform" />
-                Get In Touch
+                <a href="mailto:hi@tade.me" className="flex items-center gap-3">
+                  <Mail size={22} className="group-hover:rotate-12 transition-transform" />
+                  Get In Touch
+                </a>
               </Button>
             </div>
           </div>
           
-          {/* Simplified rounded image */}
+          {/* Professional image container */}
           <div className="lg:w-1/2 relative animate-scale-in">
-            <div className="relative group max-w-sm mx-auto">
-              {/* Outer glow rings */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 blur-xl animate-pulse"></div>
-              <div className="absolute inset-2 rounded-full bg-gradient-to-r from-cyan-400/20 via-blue-500/20 to-purple-600/20 blur-lg animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="relative group max-w-md mx-auto">
+              {/* Background glow effect */}
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
               
-              {/* Main image container */}
-              <div className="relative">
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 animate-spin-slow">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-slate-900 to-gray-900"></div>
-                </div>
-                
-                {/* Image */}
-                <div className="relative p-3">
-                  <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400/50 via-purple-500/50 to-pink-500/50 group-hover:scale-105 transition-all duration-500 shadow-2xl">
+              {/* Main container */}
+              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl shadow-2xl border border-gray-700/50 group-hover:border-gray-600/50 transition-all duration-500">
+                {/* Inner frame */}
+                <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-1">
+                  <div className="relative overflow-hidden rounded-lg">
                     <img 
                       src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
                       alt="Oluwaseun Akintade" 
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700 rounded-lg"
                     />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-lg"></div>
                   </div>
                 </div>
                 
-                {/* Floating particles */}
-                <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-80"></div>
-                <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '0.5s' }}></div>
-                <div className="absolute top-1/4 -right-6 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute bottom-1/4 -left-6 w-2.5 h-2.5 bg-cyan-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '1.5s' }}></div>
+                {/* Floating tech icons */}
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500/20 backdrop-blur-sm rounded-lg border border-blue-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <Code size={16} className="text-blue-400" />
+                </div>
+                
+                <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-purple-500/20 backdrop-blur-sm rounded-lg border border-purple-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ transitionDelay: '100ms' }}>
+                  <Sparkles size={16} className="text-purple-400" />
+                </div>
               </div>
+              
+              {/* Floating particles */}
+              <div className="absolute -top-4 -right-4 w-3 h-3 bg-blue-400 rounded-full animate-bounce opacity-80"></div>
+              <div className="absolute -bottom-4 -left-4 w-2 h-2 bg-purple-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute top-1/4 -right-6 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce opacity-80" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>
@@ -141,7 +148,7 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group focus:outline-none"
         aria-label="Scroll down"
       >
-        <div className="flex flex-col items-center space-y-2 animate-bounce cursor-pointer">
+        <div className="flex flex-col items-center space-y-2 animate-bounce">
           <span className="text-gray-400 text-sm font-medium group-hover:text-white transition-colors">Scroll down</span>
           <div className="p-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 group-hover:text-white group-hover:border-gray-500 transition-all duration-300 group-hover:translate-y-[-2px]">
             <ChevronDown size={24} />
