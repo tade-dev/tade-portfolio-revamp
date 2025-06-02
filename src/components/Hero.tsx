@@ -1,5 +1,5 @@
 
-import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Download, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -78,32 +78,49 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Image section */}
+          {/* Enhanced Image section */}
           <div className="lg:w-1/2 relative animate-scale-in">
-            <div className="relative group">
-              {/* Rotating border */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+            <div className="relative group max-w-md mx-auto">
+              {/* Multiple glowing rings */}
+              <div className="absolute inset-0 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-all duration-700 animate-pulse"></div>
+                <div className="absolute inset-2 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-all duration-700 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute inset-4 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-all duration-700 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              </div>
               
-              {/* Main image container */}
-              <div className="relative bg-gradient-to-br from-gray-800 to-gray-900 p-2 rounded-full shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-2">
-                <div className="relative rounded-full overflow-hidden border-4 border-gray-700 group-hover:border-gray-600 transition-colors">
-                  <img 
-                    src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
-                    alt="Oluwaseun Akintade" 
-                    className="w-80 h-80 object-cover rounded-full"
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              {/* Main image container with enhanced effects */}
+              <div className="relative z-10 p-4 bg-gradient-to-br from-gray-800/90 via-gray-900/90 to-black/90 backdrop-blur-sm rounded-full shadow-2xl transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
+                {/* Inner glow border */}
+                <div className="relative p-3 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full">
+                  <div className="relative rounded-full overflow-hidden border-4 border-gradient-to-r from-blue-400 via-purple-400 to-pink-400 shadow-inner">
+                    <img 
+                      src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png" 
+                      alt="Oluwaseun Akintade" 
+                      className="w-80 h-80 object-cover rounded-full transform transition-all duration-700 group-hover:scale-110"
+                    />
+                    
+                    {/* Subtle overlay with shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-full"></div>
+                    
+                    {/* Animated border */}
+                    <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{
+                      background: 'linear-gradient(45deg, #60a5fa, #a855f7, #ec4899) border-box',
+                      mask: 'linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)',
+                      maskComposite: 'subtract'
+                    }}></div>
+                  </div>
                 </div>
               </div>
               
-              {/* Floating tech icons */}
-              <div className="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '0.5s' }}>
-                <Code size={20} />
+              {/* Floating tech icons with improved positioning */}
+              <div className="absolute -top-6 -right-6 bg-gradient-to-r from-blue-500 to-cyan-500 text-white p-4 rounded-2xl shadow-2xl animate-bounce transform transition-all duration-300 hover:scale-110" style={{ animationDelay: '0.5s' }}>
+                <Code size={24} />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-purple-500 text-white p-3 rounded-full shadow-lg animate-bounce" style={{ animationDelay: '1.5s' }}>
-                <Sparkles size={20} />
+              <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-2xl shadow-2xl animate-bounce transform transition-all duration-300 hover:scale-110" style={{ animationDelay: '1.5s' }}>
+                <Sparkles size={24} />
+              </div>
+              <div className="absolute top-1/2 -right-8 bg-gradient-to-r from-orange-500 to-amber-500 text-white p-3 rounded-xl shadow-xl animate-bounce transform transition-all duration-300 hover:scale-110" style={{ animationDelay: '2.5s' }}>
+                <ArrowRight size={20} />
               </div>
             </div>
           </div>
