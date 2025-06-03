@@ -7,56 +7,62 @@ const ProjectsPage = () => {
   const projects = [
     {
       title: "Foodnify",
-      subtitle: "Food Delivery Platform",
-      description: "A comprehensive food delivery application connecting users with local restaurants. Features real-time order tracking, payment integration, and seamless user experience for both customers and vendors.",
-      tags: ["Flutter", "Firebase", "Payment Gateway", "Real-time"],
+      subtitle: "All in one Food Platform",
+      description: "Foodnify is the all-in-one food-centric platform where you can connect with chefs, explore and share recipes, and order delicious homemade meals. Powered by an AI-driven meal planner and built-in calorie tracker, Foodnify helps you eat smarter, discover new dishes, and personalize your food journey, all in one place.",
+      tags: ["Flutter", "Claude AI API", "Swift", "Firebase", "Getx"],
       imageUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b",
       githubUrl: "#",
-      liveUrl: "https://foodnify.com"
+      liveUrl: "https://foodnify.com",
+      appStoreUrl: "https://apps.apple.com/us/app/foodnify/id6615082987",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=app.foodnify.com"
     },
     {
       title: "Fuel Alert",
-      subtitle: "Fuel Price Monitoring",
-      description: "Nigerian fuel price tracking application that provides real-time fuel prices across different stations. Helps users find the best fuel prices and track market trends with location-based services.",
-      tags: ["Flutter", "Location Services", "Price Tracking", "Nigeria"],
+      subtitle: "Fuel Alert System",
+      description: "Fuel Alert helps you stay ahead of fluctuating fuel prices by tracking real-time updates, highlighting the best local deals, and helping you make smarter decisions at the pump.",
+      tags: ["Flutter", "Google APIs", "Google Maps", "BLOC", "Firebase"],
       imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96",
       githubUrl: "#",
-      liveUrl: "https://fuelalertng.com"
+      liveUrl: "https://fuelalertng.com",
+      appStoreUrl: "https://apps.apple.com/ng/app/fuel-alert/id6667118204",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.dekon.fuelalert&pcampaignid=web_share"
     },
     {
       title: "Slayt",
-      subtitle: "Content Creation Platform",
-      description: "Modern content creation and sharing platform designed for creators to showcase their work. Features advanced editing tools, community features, and monetization options for content creators.",
-      tags: ["Flutter", "Content Management", "Creator Tools", "Social"],
+      subtitle: "Task management/ Ward Care Platform",
+      description: "Slayt is the ultimate task management app designed for parents, providing a seamless solution to delegate chores and responsibilities within the family. With Slayt, parents can effortlessly assign tasks to their children, ensuring a more organized and harmonious household.",
+      tags: ["Flutter", "Provider", "Firebase", "RESTful APIs"],
       imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
       githubUrl: "#",
-      liveUrl: "https://slayt.co"
+      liveUrl: "https://slayt.co",
+      appStoreUrl: "https://apps.apple.com/ng/app/slayt-closer-together/id6470950940",
+      playStoreUrl: "https://play.google.com/store/apps/details?id=com.slayt&pcampaignid=web_share"
     },
     {
       title: "Vybaze",
-      subtitle: "Social Networking App",
-      description: "Next-generation social networking platform focused on authentic connections and meaningful interactions. Features innovative matching algorithms and community-building tools.",
-      tags: ["Flutter", "Social Network", "Real-time Chat", "Community"],
+      subtitle: "AI-Powered Music Feedback & Discovery Platform",
+      description: "Vybaze is a cutting-edge music platform designed to help artists improve and promote their sound through AI-driven feedback and community engagement. The app empowers musicians to upload their tracks and receive structured, intelligent critiques from both users and an AI system.",
+      tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Stripe"],
       imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113",
-      githubUrl: "#",
+      githubUrl: "https://github.com/tade-dev/vybaze",
       liveUrl: "https://vybaze.xyz"
     },
     {
-      title: "E-Commerce Platform",
-      subtitle: "iOS Native App",
-      description: "A feature-rich e-commerce mobile application built with SwiftUI. Implemented complex UI transitions, cart management, payment processing, and push notifications.",
-      tags: ["SwiftUI", "CoreData", "Stripe", "iOS"],
-      imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-      githubUrl: "#",
+      title: "Hubbit",
+      subtitle: "Habit Tracker Platform",
+      description: "Hubbit is a beautifully designed habit-tracking app that helps users build better routines through simplicity, motivation, and delight. Crafted with Apple's modern design principles, Hubbit leverages glassmorphic UI, SF Symbols, and native SwiftUI components to deliver an iOS 19, ready experience.",
+      tags: ["SwiftUI", "MVVM", "CoreData"],
+      imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71",
+      githubUrl: "https://github.com/tade-dev/hubbit",
       liveUrl: "#"
     },
     {
-      title: "Task Management App",
-      subtitle: "Cross-platform",
-      description: "A productivity application built with Flutter that helps users organize tasks, set reminders, and collaborate with team members. Features elegant UI/UX, cloud syncing, and calendar integration.",
-      tags: ["Flutter", "Dart", "Firebase", "Provider"],
+      title: "How Much App",
+      subtitle: "Proposal Generator for Developers",
+      description: "A platform that generates a pricing proposal for developers based on their experiences and skillset.",
+      tags: ["Flutter", "Dart", "OpenAI API", "Node.js"],
       imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      githubUrl: "#",
+      githubUrl: "https://github.com/tade-dev/how_much_app",
       liveUrl: "#"
     }
   ];
@@ -140,21 +146,41 @@ const ProjectsPage = () => {
                     ))}
                   </div>
                   
-                  <div className="flex space-x-4">
-                    <a 
-                      href={project.githubUrl} 
-                      className="flex items-center text-gray-400 hover:text-white transition-colors group/link"
-                    >
-                      <Github size={18} className="mr-2 group-hover/link:rotate-12 transition-transform" />
-                      <span className="font-medium">Code</span>
-                    </a>
-                    <a 
-                      href={project.liveUrl} 
-                      className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link"
-                    >
-                      <ExternalLink size={18} className="mr-2 group-hover/link:rotate-12 transition-transform" />
-                      <span className="font-medium">Demo</span>
-                    </a>
+                  <div className="flex flex-wrap gap-4">
+                    {project.githubUrl !== "#" && (
+                      <a 
+                        href={project.githubUrl} 
+                        className="flex items-center text-gray-400 hover:text-white transition-colors group/link"
+                      >
+                        <Github size={18} className="mr-2 group-hover/link:rotate-12 transition-transform" />
+                        <span className="font-medium">Code</span>
+                      </a>
+                    )}
+                    {project.liveUrl !== "#" && (
+                      <a 
+                        href={project.liveUrl} 
+                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link"
+                      >
+                        <ExternalLink size={18} className="mr-2 group-hover/link:rotate-12 transition-transform" />
+                        <span className="font-medium">Demo</span>
+                      </a>
+                    )}
+                    {project.appStoreUrl && (
+                      <a 
+                        href={project.appStoreUrl} 
+                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link text-sm"
+                      >
+                        App Store
+                      </a>
+                    )}
+                    {project.playStoreUrl && (
+                      <a 
+                        href={project.playStoreUrl} 
+                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link text-sm"
+                      >
+                        Play Store
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
@@ -173,7 +199,7 @@ const ProjectsPage = () => {
             Let's discuss your next mobile app project and bring your ideas to life.
           </p>
           <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-3 text-lg rounded-xl">
-            <a href="/#contact">Get In Touch</a>
+            <a href="mailto:hi@tade.me">Get In Touch</a>
           </Button>
         </div>
       </section>
