@@ -91,17 +91,19 @@ const TechStackCarousel = () => {
         </div>
       </div>
       
-      {/* CSS for animation */}
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      {/* Add the CSS animation to the document head */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
           }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+        `
+      }} />
     </div>
   );
 };
