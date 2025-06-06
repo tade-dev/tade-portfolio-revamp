@@ -1,4 +1,3 @@
-
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef } from "react";
@@ -30,7 +29,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Foodnify",
-      subtitle: "All in one Food Platform",
+      subtitle: "AI-Driven Food Platform",
       description: "Foodnify is the all-in-one food-centric platform where you can connect with chefs, explore and share recipes, and order delicious homemade meals. Powered by an AI-driven meal planner and built-in calorie tracker, Foodnify helps you eat smarter, discover new dishes, and personalize your food journey, all in one place.",
       tags: ["Flutter", "Claude AI API", "Swift", "Firebase", "Getx"],
       imageUrl: "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
