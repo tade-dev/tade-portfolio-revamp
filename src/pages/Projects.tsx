@@ -1,7 +1,6 @@
 import React from "react";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Interactive3DObject from "@/components/Interactive3DObject";
 
 const ProjectsPage = () => {
   const projects = [
@@ -80,14 +79,9 @@ const ProjectsPage = () => {
             </Button>
             <h1 className="text-2xl font-bold">My Projects</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <div className="w-16 h-16">
-              <Interactive3DObject />
-            </div>
-            <a href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">
-              Back to Home
-            </a>
-          </div>
+          <a href="/" className="text-gray-600 hover:text-gray-900 font-medium transition-colors">
+            Back to Home
+          </a>
         </div>
       </header>
 
@@ -97,9 +91,6 @@ const ProjectsPage = () => {
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-gradient-to-r from-amber-500/10 to-orange-500/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute inset-0 h-64">
-            <Interactive3DObject />
-          </div>
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">

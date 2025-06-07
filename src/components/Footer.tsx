@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Heart } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -42,7 +42,9 @@ const Footer = () => {
             </a>
             <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" 
                className="group relative p-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
-              <Twitter size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current group-hover:rotate-12 transition-transform duration-300">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
           </div>
