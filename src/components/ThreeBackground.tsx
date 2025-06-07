@@ -1,7 +1,6 @@
 
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, Box, Torus } from '@react-three/drei';
 import * as THREE from 'three';
 
 const FloatingGeometry = ({ position, geometry }: { position: [number, number, number], geometry: 'sphere' | 'box' | 'torus' }) => {
@@ -15,22 +14,43 @@ const FloatingGeometry = ({ position, geometry }: { position: [number, number, n
     }
   });
 
-  const GeometryComponent = geometry === 'sphere' ? Sphere : geometry === 'box' ? Box : Torus;
+  const getGeometry = () => {
+    switch (geometry) {
+      case 'sphere':
+        return <sphereGeometry args={[0.8, 32, 32]} />;
+      case 'box':
+        return <boxGeometry args={[0.8, 0.8, 0.8]} />;
+      case 'torus':
+        return <torusGeometry args={[0.5, 0.2, 16, 32]} />;
+      default:
+        return <sphereGeometry args={[0.8, 32, 32]} />;
+    }
+  };
+
+  const getColor = () => {
+    switch (geometry) {
+      case 'sphere':
+        return '#3b82f6';
+      case 'box':
+        return '#8b5cf6';
+      case 'torus':
+        return '#f59e0b';
+      default:
+        return '#3b82f6';
+    }
+  };
   
   return (
-    <GeometryComponent
-      ref={meshRef}
-      position={position}
-      args={geometry === 'torus' ? [0.5, 0.2, 16, 32] : [0.8, 0.8, 0.8]}
-    >
+    <mesh ref={meshRef} position={position}>
+      {getGeometry()}
       <meshStandardMaterial
-        color={geometry === 'sphere' ? '#3b82f6' : geometry === 'box' ? '#8b5cf6' : '#f59e0b'}
+        color={getColor()}
         transparent
         opacity={0.6}
         roughness={0.3}
         metalness={0.7}
       />
-    </GeometryComponent>
+    </mesh>
   );
 };
 

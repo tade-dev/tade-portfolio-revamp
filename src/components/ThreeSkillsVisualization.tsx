@@ -1,7 +1,7 @@
 
 import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Text, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 const SkillNode = ({ 
@@ -16,6 +16,7 @@ const SkillNode = ({
   onHover: (hovered: boolean) => void
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
+  const textRef = useRef<THREE.Mesh>(null);
   
   useFrame(() => {
     if (meshRef.current) {
@@ -41,16 +42,11 @@ const SkillNode = ({
           metalness={0.8}
         />
       </mesh>
-      <Text
-        position={[0, -1.5, 0]}
-        fontSize={0.3}
-        color="white"
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/Inter-Bold.woff"
-      >
-        {skill}
-      </Text>
+      {/* Simple text representation - in a real app you'd use Text from drei or HTML overlay */}
+      <mesh position={[0, -1.5, 0]} ref={textRef}>
+        <planeGeometry args={[2, 0.5]} />
+        <meshBasicMaterial color="white" transparent opacity={0.8} />
+      </mesh>
     </group>
   );
 };
@@ -90,6 +86,17 @@ const ThreeSkillsVisualization = () => {
           autoRotateSpeed={0.5}
         />
       </Canvas>
+      
+      {/* Skill labels overlay */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        <div className="text-center">
+          {hoveredSkill && (
+            <div className="bg-black bg-opacity-50 text-white px-4 py-2 rounded-lg">
+              {hoveredSkill}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
