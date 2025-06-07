@@ -1,5 +1,5 @@
 
-import { ChevronDown, Github, Linkedin, Twitter, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
+import { ChevronDown, Github, Linkedin, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -71,10 +71,18 @@ const Hero = () => {
                 </a>
               </Button>
               
-              <Button variant="outline" className="border-2 border-gray-600 bg-gray-800/50 backdrop-blur-sm text-white text-lg px-8 py-6 rounded-xl hover:bg-gray-700/50 hover:border-gray-500 shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] group">
-                <a href="mailto:hi@tade.me" className="flex items-center gap-3">
-                  <Mail size={22} className="group-hover:rotate-12 transition-transform" />
-                  Get In Touch
+              <Button className="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl group animate-pulse">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <a 
+                  href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 relative z-10"
+                >
+                  <Mail size={22} className="group-hover:rotate-12 transition-transform animate-bounce" />
+                  <span className="font-semibold">My Resume</span>
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
@@ -136,7 +144,9 @@ const Hero = () => {
           
           <a href="https://www.x.com/tadeDev_" target="_blank" rel="noopener noreferrer" 
              className="group relative p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
-            <Twitter size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current group-hover:rotate-12 transition-transform duration-300">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>

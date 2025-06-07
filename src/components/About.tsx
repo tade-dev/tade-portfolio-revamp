@@ -1,12 +1,11 @@
-
 import React from "react";
-import { Code, Heart, Coffee, Music, Gamepad2, Book } from "lucide-react";
+import { Code, Heart, Coffee, Music, Gamepad2, Book, Film, Dribbble } from "lucide-react";
 
 const About = () => {
   const hobbies = [
-    { icon: Music, name: "Music Production", description: "Creating beats and exploring sound design" },
+    { icon: Film, name: "Movies", description: "Exploring cinematic storytelling and film analysis" },
     { icon: Gamepad2, name: "Gaming", description: "Strategy games and mobile gaming enthusiast" },
-    { icon: Coffee, name: "Coffee Brewing", description: "Perfecting the art of pour-over coffee" },
+    { icon: Dribbble, name: "Basketball", description: "Playing pickup games and following the NBA" },
     { icon: Book, name: "Reading", description: "Tech blogs, sci-fi novels, and design books" }
   ];
 
