@@ -1,6 +1,8 @@
+
 import React from "react";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const ProjectsPage = () => {
   const projects = [
@@ -67,21 +69,24 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
-      <header className="bg-gray-900/80 backdrop-blur-md border-b border-gray-700 sticky top-0 z-50">
+      <header className="bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="p-2 text-white hover:bg-gray-800" asChild>
+            <Button variant="ghost" className="p-2 hover:bg-muted" asChild>
               <a href="/">
                 <ArrowLeft size={20} />
               </a>
             </Button>
-            <h1 className="text-2xl font-bold text-white">My Projects</h1>
+            <h1 className="text-2xl font-bold">My Projects</h1>
           </div>
-          <a href="/" className="text-gray-300 hover:text-white font-medium transition-colors">
-            Back to Home
-          </a>
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
+            <a href="/" className="text-muted-foreground hover:text-foreground font-medium transition-colors">
+              Back to Home
+            </a>
+          </div>
         </div>
       </header>
 
@@ -94,10 +99,10 @@ const ProjectsPage = () => {
         </div>
         
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
             A showcase of my mobile development work using Flutter and SwiftUI. 
             Each project demonstrates different aspects of modern mobile app development.
           </p>
@@ -111,12 +116,12 @@ const ProjectsPage = () => {
             {projects.map((project, index) => (
               <div 
                 key={index}
-                className="bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 animate-fade-in border border-gray-700/50 group hover:border-gray-600 hover:-translate-y-2"
+                className="bg-card/50 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 animate-fade-in border border-border group hover:border-border/80 hover:-translate-y-2"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="p-6">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-gray-800 to-gray-700 p-3 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-muted to-muted/50 p-3 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                       <img 
                         src={project.imageUrl} 
                         alt={`${project.title} icon`}
@@ -124,14 +129,14 @@ const ProjectsPage = () => {
                       />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">
                         {project.title}
                       </h3>
-                      <p className="text-blue-400 font-medium text-sm">{project.subtitle}</p>
+                      <p className="text-primary font-medium text-sm">{project.subtitle}</p>
                     </div>
                   </div>
                   
-                  <p className="text-gray-300 mb-4 leading-relaxed text-sm">
+                  <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
                     {project.description}
                   </p>
                   
@@ -139,7 +144,7 @@ const ProjectsPage = () => {
                     {project.tags.map((tag, i) => (
                       <span 
                         key={i} 
-                        className="bg-blue-500/20 text-blue-300 px-2.5 py-1 rounded-full text-xs font-medium border border-blue-500/30"
+                        className="bg-primary/20 text-primary px-2.5 py-1 rounded-full text-xs font-medium border border-primary/30"
                       >
                         {tag}
                       </span>
@@ -150,7 +155,7 @@ const ProjectsPage = () => {
                     {project.githubUrl !== "#" && (
                       <a 
                         href={project.githubUrl} 
-                        className="flex items-center text-gray-400 hover:text-white transition-colors group/link"
+                        className="flex items-center text-muted-foreground hover:text-foreground transition-colors group/link"
                       >
                         <Github size={16} className="mr-2 group-hover/link:rotate-12 transition-transform" />
                         <span className="font-medium">Code</span>
@@ -159,7 +164,7 @@ const ProjectsPage = () => {
                     {project.liveUrl !== "#" && (
                       <a 
                         href={project.liveUrl} 
-                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link"
+                        className="flex items-center text-muted-foreground hover:text-primary transition-colors group/link"
                       >
                         <ExternalLink size={16} className="mr-2 group-hover/link:rotate-12 transition-transform" />
                         <span className="font-medium">Demo</span>
@@ -168,7 +173,7 @@ const ProjectsPage = () => {
                     {project.appStoreUrl && (
                       <a 
                         href={project.appStoreUrl} 
-                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link text-xs"
+                        className="flex items-center text-muted-foreground hover:text-primary transition-colors group/link text-xs"
                       >
                         App Store
                       </a>
@@ -176,7 +181,7 @@ const ProjectsPage = () => {
                     {project.playStoreUrl && (
                       <a 
                         href={project.playStoreUrl} 
-                        className="flex items-center text-gray-400 hover:text-blue-400 transition-colors group/link text-xs"
+                        className="flex items-center text-muted-foreground hover:text-primary transition-colors group/link text-xs"
                       >
                         Play Store
                       </a>
@@ -190,15 +195,15 @@ const ProjectsPage = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-6 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 backdrop-blur-sm border-t border-gray-700/50">
+      <section className="py-16 px-6 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 backdrop-blur-sm border-t border-border">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold text-white mb-4">
+          <h3 className="text-3xl font-bold mb-4">
             Interested in Working Together?
           </h3>
-          <p className="text-gray-300 text-lg mb-8">
+          <p className="text-muted-foreground text-lg mb-8">
             Let's discuss your next mobile app project and bring your ideas to life.
           </p>
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-3 text-lg rounded-xl">
+          <Button className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 font-semibold px-8 py-3 text-lg rounded-xl">
             <a href="mailto:hi@tade.me">Get In Touch</a>
           </Button>
         </div>
