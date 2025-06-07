@@ -1,4 +1,3 @@
-
 import { ChevronDown, Github, Linkedin, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -71,18 +70,16 @@ const Hero = () => {
                 </a>
               </Button>
               
-              <Button className="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl group animate-pulse">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <Button className="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white text-lg px-8 py-6 rounded-xl shadow-lg">
                 <a 
                   href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 relative z-10"
+                  className="flex items-center gap-3"
                 >
-                  <Mail size={22} className="group-hover:rotate-12 transition-transform animate-bounce" />
+                  <Mail size={22} />
                   <span className="font-semibold">My Resume</span>
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={18} />
                 </a>
               </Button>
             </div>

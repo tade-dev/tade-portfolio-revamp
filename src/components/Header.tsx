@@ -67,18 +67,15 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <Button className={`relative overflow-hidden rounded-md flex items-center gap-2 group transform transition-all duration-300 hover:scale-105 hover:shadow-lg ${
+          <Button className={`flex items-center gap-2 ${
             scrolled ? "bg-blue-600 hover:bg-blue-700" : "bg-white/20 hover:bg-white/30 backdrop-blur-sm"
           }`}>
-            {/* Shimmer effect */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            {/* Pulse animation on icon */}
-            <FileText size={18} className="group-hover:animate-pulse relative z-10" />
+            <FileText size={18} />
             <a 
               href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`${scrolled ? "text-white" : "text-white"} relative z-10 font-semibold`}
+              className={`${scrolled ? "text-white" : "text-white"} font-semibold`}
             >
               My Resume
             </a>
@@ -113,16 +110,14 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="relative overflow-hidden bg-blue-600 hover:bg-blue-700 rounded-md w-full flex items-center justify-center gap-2 group transform transition-all duration-300 hover:scale-105">
-              {/* Mobile shimmer effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <FileText size={18} className="group-hover:animate-pulse relative z-10" />
+            <Button className="bg-blue-600 hover:bg-blue-700 w-full flex items-center justify-center gap-2">
+              <FileText size={18} />
               <a 
                 href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="relative z-10 font-semibold"
+                className="font-semibold"
               >
                 My Resume
               </a>
