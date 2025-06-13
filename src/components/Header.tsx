@@ -70,7 +70,7 @@ const Header = () => {
           <Button className={`flex items-center gap-2 text-sm lg:text-base px-3 lg:px-4 py-2 ${
             scrolled ? "bg-blue-600 hover:bg-blue-700" : "bg-white/20 hover:bg-white/30 backdrop-blur-sm"
           }`}>
-            <FileText size={16} lg:size={18} />
+            <FileText size={18} />
             <a 
               href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
               target="_blank" 

@@ -65,9 +65,9 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
               <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-xl shadow-lg transform transition-all duration-300 hover:translate-y-[-2px] hover:shadow-2xl group">
                 <a href="/projects" className="flex items-center gap-3">
-                  <Code size={20} sm:size={22} className="group-hover:rotate-12 transition-transform" />
+                  <Code size={20} className="group-hover:rotate-12 transition-transform" />
                   View Projects
-                  <ArrowRight size={16} sm:size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               
@@ -76,9 +76,9 @@ const Hero = () => {
                   href="mailto:hi@tade.me"
                   className="flex items-center gap-3"
                 >
-                  <Mail size={20} sm:size={22} />
+                  <Mail size={20} />
                   <span className="font-semibold">Get in touch</span>
-                  <ArrowRight size={16} sm:size={18} />
+                  <ArrowRight size={18} />
                 </a>
               </Button>
             </div>
@@ -108,11 +108,11 @@ const Hero = () => {
                 
                 {/* Floating tech icons */}
                 <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-blue-500/20 backdrop-blur-sm rounded-lg border border-blue-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Code size={12} sm:size={16} className="text-blue-400" />
+                  <Code size={14} className="text-blue-400" />
                 </div>
                 
                 <div className="absolute -bottom-2 -left-2 w-6 h-6 sm:w-8 sm:h-8 bg-purple-500/20 backdrop-blur-sm rounded-lg border border-purple-400/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{ transitionDelay: '100ms' }}>
-                  <Sparkles size={12} sm:size={16} className="text-purple-400" />
+                  <Sparkles size={14} className="text-purple-400" />
                 </div>
               </div>
               
@@ -128,13 +128,13 @@ const Hero = () => {
         <div className="flex justify-center lg:justify-start space-x-4 sm:space-x-6 mt-12">
           <a href="https://www.github.com/tade-dev" target="_blank" rel="noopener noreferrer" 
              className="group relative p-3 sm:p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
-            <Github size={20} sm:size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <Github size={22} className="group-hover:rotate-12 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
           
           <a href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/" target="_blank" rel="noopener noreferrer" 
              className="group relative p-3 sm:p-4 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-gray-500 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-xl">
-            <Linkedin size={20} sm:size={24} className="group-hover:rotate-12 transition-transform duration-300" />
+            <Linkedin size={22} className="group-hover:rotate-12 transition-transform duration-300" />
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
           
