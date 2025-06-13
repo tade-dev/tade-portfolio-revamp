@@ -33,9 +33,9 @@ const Header = () => {
         scrolled ? "bg-white/90 shadow-sm backdrop-blur-md py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         <a href="#home" className="group relative">
-          <span className={`text-2xl font-bold transition-all duration-300 font-dancing cursor-pointer ${
+          <span className={`text-xl sm:text-2xl font-bold transition-all duration-300 font-dancing cursor-pointer ${
             scrolled 
               ? "text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text" 
               : "text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text"
@@ -43,7 +43,7 @@ const Header = () => {
             tade.me
           </span>
           {/* Enhanced glow effect with motion */}
-          <div className={`absolute inset-0 text-2xl font-bold font-dancing opacity-0 group-hover:opacity-100 transition-all duration-500 ${
+          <div className={`absolute inset-0 text-xl sm:text-2xl font-bold font-dancing opacity-0 group-hover:opacity-100 transition-all duration-500 ${
             scrolled 
               ? "text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-amber-600 bg-clip-text blur-sm" 
               : "text-transparent bg-gradient-to-r from-blue-400 via-purple-400 to-amber-400 bg-clip-text blur-sm"
@@ -55,22 +55,22 @@ const Header = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {menuItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className={`font-medium transition-colors ${
+              className={`font-medium transition-colors text-sm lg:text-base ${
                 scrolled ? "text-gray-800 hover:text-gray-600" : "text-gray-300 hover:text-white"
               }`}
             >
               {item.label}
             </a>
           ))}
-          <Button className={`flex items-center gap-2 ${
+          <Button className={`flex items-center gap-2 text-sm lg:text-base px-3 lg:px-4 py-2 ${
             scrolled ? "bg-blue-600 hover:bg-blue-700" : "bg-white/20 hover:bg-white/30 backdrop-blur-sm"
           }`}>
-            <FileText size={18} />
+            <FileText size={16} lg:size={18} />
             <a 
               href="https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link" 
               target="_blank" 
@@ -98,7 +98,7 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white p-4 absolute top-full left-0 right-0 shadow-md animate-fade-in border-t border-gray-200">
+        <div className="md:hidden bg-white/95 backdrop-blur-md p-4 absolute top-full left-0 right-0 shadow-md animate-fade-in border-t border-gray-200 max-w-full overflow-hidden">
           <nav className="flex flex-col space-y-4">
             {menuItems.map((item) => (
               <a
