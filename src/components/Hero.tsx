@@ -1,16 +1,9 @@
 
-import { ChevronDown, Github, Linkedin, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
+import { Github, Linkedin, ArrowRight, Sparkles, Code, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import GlassmorphCard from "./GlassmorphCard";
 
 const Hero = () => {
-  const handleScrollToExperience = () => {
-    const experienceSection = document.getElementById('experience');
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black pt-20 pb-10 px-4 sm:px-6 relative overflow-hidden">
       {/* Enhanced animated background elements */}
@@ -170,20 +163,6 @@ const Hero = () => {
           </GlassmorphCard>
         </div>
       </div>
-      
-      {/* Enhanced scroll indicator with glassmorphism */}
-      <button 
-        onClick={handleScrollToExperience}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group focus:outline-none"
-        aria-label="Scroll down"
-      >
-        <GlassmorphCard className="flex flex-col items-center space-y-2 p-4 animate-bounce group-hover:animate-none transition-all duration-300">
-          <span className="text-gray-400 text-sm font-medium group-hover:text-white transition-colors">Scroll down</span>
-          <div className="p-3 text-gray-400 group-hover:text-white transition-all duration-300 group-hover:translate-y-[-2px]">
-            <ChevronDown size={24} />
-          </div>
-        </GlassmorphCard>
-      </button>
     </section>
   );
 };
