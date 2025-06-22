@@ -25,17 +25,27 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Form submission started");
     setIsSubmitting(true);
     
     try {
-      console.log("Submitting contact form:", formData);
+      console.log("Submitting contact form with data:", formData);
+      
+      // Validate form data
+      if (!formData.name || !formData.email || !formData.message) {
+        throw new Error("Please fill in all fields");
+      }
+      
+      console.log("About to call Supabase function...");
       
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: formData
       });
 
+      console.log("Supabase function response:", { data, error });
+
       if (error) {
-        console.error("Error sending email:", error);
+        console.error("Supabase function error:", error);
         throw error;
       }
 
@@ -51,7 +61,7 @@ const Contact = () => {
       console.error("Failed to send message:", error);
       toast({
         title: "Failed to send message",
-        description: "Please try again or contact me directly at hi@tade.me",
+        description: `Error: ${error.message}. Please try again or contact me directly at hi@tade.me`,
         variant: "destructive",
       });
     } finally {

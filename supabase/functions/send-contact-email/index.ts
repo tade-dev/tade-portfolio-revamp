@@ -17,15 +17,35 @@ interface ContactEmailRequest {
 }
 
 const handler = async (req: Request): Promise<Response> => {
+  console.log("Edge function called with method:", req.method);
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
+    console.log("Handling CORS preflight request");
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { name, email, message }: ContactEmailRequest = await req.json();
+    console.log("Processing request...");
+    const requestText = await req.text();
+    console.log("Raw request body:", requestText);
+    
+    const { name, email, message }: ContactEmailRequest = JSON.parse(requestText);
+    console.log("Parsed data:", { name, email, messageLength: message?.length });
+
+    // Validate required fields
+    if (!name || !email || !message) {
+      throw new Error("Missing required fields");
+    }
 
     console.log("Sending contact email for:", { name, email });
+
+    // Check if RESEND_API_KEY is available
+    const apiKey = Deno.env.get("RESEND_API_KEY");
+    if (!apiKey) {
+      throw new Error("RESEND_API_KEY is not configured");
+    }
+    console.log("API key is configured");
 
     // Send email to hi@tade.me
     const emailResponse = await resend.emails.send({
