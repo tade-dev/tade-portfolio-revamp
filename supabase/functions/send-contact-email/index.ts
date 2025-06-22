@@ -50,11 +50,10 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email for:", { name, email });
 
-    // Send email to your verified email address (akintadeseun816@gmail.com)
-    // This will work in testing mode until you verify a domain
+    // Send email to hi@tade.me using your verified domain
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: ["akintadeseun816@gmail.com"], // Using your verified email temporarily
+      from: "Contact Form <contact@tade.me>",
+      to: ["hi@tade.me"],
       subject: `New Contact Form Message from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
