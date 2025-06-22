@@ -1,5 +1,5 @@
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -8,6 +8,10 @@ const Hero = () => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openResume = () => {
+    window.open('https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link', '_blank');
   };
 
   return (
@@ -41,16 +45,29 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* CTA */}
-            <Button 
-              size="lg" 
-              className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 font-semibold"
-              onClick={scrollToContact}
-              aria-label="Contact Akintade for mobile development services"
-            >
-              Hire Me
-              <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
-            </Button>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                size="lg" 
+                className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 font-semibold"
+                onClick={scrollToContact}
+                aria-label="Contact Akintade for mobile development services"
+              >
+                Hire Me
+                <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
+              </Button>
+              
+              <Button 
+                variant="outline"
+                size="lg" 
+                className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 font-semibold"
+                onClick={openResume}
+                aria-label="View Akintade's resume"
+              >
+                <FileText className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
+                Resume
+              </Button>
+            </div>
           </div>
           
           {/* Hero Image */}
