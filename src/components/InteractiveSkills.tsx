@@ -11,7 +11,7 @@ const InteractiveSkills = () => {
       id: 'flutter',
       name: 'Flutter',
       level: 95,
-      icon: <Smartphone className="h-8 w-8" />,
+      icon: <Smartphone className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-blue-400 to-cyan-400',
       description: 'Cross-platform mobile development with beautiful UIs'
     },
@@ -19,7 +19,7 @@ const InteractiveSkills = () => {
       id: 'dart',
       name: 'Dart',
       level: 92,
-      icon: <Code className="h-8 w-8" />,
+      icon: <Code className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-green-400 to-blue-400',
       description: 'Modern programming language for Flutter development'
     },
@@ -27,7 +27,7 @@ const InteractiveSkills = () => {
       id: 'swiftui',
       name: 'SwiftUI',
       level: 90,
-      icon: <Rocket className="h-8 w-8" />,
+      icon: <Rocket className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-orange-400 to-red-400',
       description: 'Native iOS development with declarative UI'
     },
@@ -35,7 +35,7 @@ const InteractiveSkills = () => {
       id: 'mvvm',
       name: 'MVVM',
       level: 90,
-      icon: <Brain className="h-8 w-8" />,
+      icon: <Brain className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-purple-400 to-pink-400',
       description: 'Model-View-ViewModel architecture pattern'
     },
@@ -43,7 +43,7 @@ const InteractiveSkills = () => {
       id: 'coredata',
       name: 'CoreData',
       level: 90,
-      icon: <Database className="h-8 w-8" />,
+      icon: <Database className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-indigo-400 to-purple-400',
       description: 'iOS data persistence and object graph management'
     },
@@ -51,7 +51,7 @@ const InteractiveSkills = () => {
       id: 'swift',
       name: 'Swift',
       level: 85,
-      icon: <Rocket className="h-8 w-8" />,
+      icon: <Rocket className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-red-400 to-orange-400',
       description: 'Powerful programming language for iOS development'
     },
@@ -59,7 +59,7 @@ const InteractiveSkills = () => {
       id: 'firebase',
       name: 'Firebase',
       level: 85,
-      icon: <Server className="h-8 w-8" />,
+      icon: <Server className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-yellow-400 to-orange-400',
       description: 'Backend-as-a-Service platform for mobile apps'
     },
@@ -67,23 +67,23 @@ const InteractiveSkills = () => {
       id: 'apis',
       name: 'RESTful APIs',
       level: 95,
-      icon: <Server className="h-8 w-8" />,
+      icon: <Server className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-teal-400 to-green-400',
       description: 'API design and integration expertise'
     }
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-white dark:via-gray-100 dark:to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-white dark:via-gray-100 dark:to-blue-400 bg-clip-text text-transparent">
           Technical Skills
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-12 lg:mb-16 max-w-2xl mx-auto px-4">
           Hover over each skill bubble to see detailed information and proficiency levels.
         </p>
         
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.id}
@@ -96,15 +96,15 @@ const InteractiveSkills = () => {
             >
               {/* Skill Bubble */}
               <motion.div
-                className={`relative w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${skill.color} p-1 shadow-lg`}
+                className={`relative w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full bg-gradient-to-br ${skill.color} p-1 shadow-lg`}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full flex flex-col items-center justify-center">
-                  <div className="text-gray-700 dark:text-gray-300 mb-2">
+                  <div className="text-gray-700 dark:text-gray-300 mb-1 lg:mb-2">
                     {skill.icon}
                   </div>
-                  <span className="font-bold text-gray-800 dark:text-white text-sm text-center">{skill.name}</span>
+                  <span className="font-bold text-gray-800 dark:text-white text-xs lg:text-sm text-center px-1">{skill.name}</span>
                 </div>
                 
                 {/* Progress Ring */}
@@ -149,7 +149,7 @@ const InteractiveSkills = () => {
               
               {/* Description Card */}
               <motion.div
-                className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-64 z-10 border border-gray-200 dark:border-gray-700"
+                className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-56 lg:w-64 z-10 border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ 
                   opacity: activeSkill === skill.id ? 1 : 0,
