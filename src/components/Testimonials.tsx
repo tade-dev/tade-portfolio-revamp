@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -137,7 +136,7 @@ const Testimonials = () => {
         </div>
 
         {/* Key Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               4+
@@ -156,15 +155,7 @@ const Testimonials = () => {
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-              100%
-            </div>
-            <div className="text-gray-600 dark:text-gray-300 text-sm">
-              Client Satisfaction
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-              24h
+              5h
             </div>
             <div className="text-gray-600 dark:text-gray-300 text-sm">
               Response Time

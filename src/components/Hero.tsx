@@ -39,10 +39,6 @@ const Hero = () => {
                 <div className="text-2xl lg:text-3xl font-bold text-primary">50+</div>
                 <div className="text-sm lg:text-base text-muted-foreground">Projects Built</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-primary">100%</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Client Satisfaction</div>
-              </div>
             </div>
             
             {/* CTA */}

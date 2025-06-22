@@ -58,7 +58,7 @@ const InteractiveSkills = () => {
     {
       id: 'firebase',
       name: 'Firebase',
-      level: 85,
+      level: 95,
       icon: <Server className="h-6 w-6 lg:h-8 lg:w-8" />,
       color: 'from-yellow-400 to-orange-400',
       description: 'Backend-as-a-Service platform for mobile apps'
