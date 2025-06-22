@@ -1,34 +1,13 @@
+
 import { ExternalLink, Github, Star, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import ProjectModal from "./ProjectModal";
 
 const Projects = () => {
-  const sectionRef = useRef<HTMLElement>(null);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const section = sectionRef.current;
-    if (section) {
-      const elements = section.querySelectorAll('.project-card, .section-title, .section-description');
-      elements.forEach((el) => observer.observe(el));
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const projects = [
     {
@@ -142,12 +121,12 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/30 section-spacing" ref={sectionRef}>
+    <section id="projects" className="bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/30 section-spacing">
       <div className="container max-w-7xl mx-auto px-8">
-        <h2 className="section-title text-3xl md:text-4xl font-medium mb-3 text-center opacity-0 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-gray-100 dark:via-gray-200 dark:to-blue-200 bg-clip-text text-transparent font-heading">
+        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-gray-100 dark:via-gray-200 dark:to-blue-200 bg-clip-text text-transparent font-heading">
           Featured Projects
         </h2>
-        <p className="section-description text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto opacity-0">
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
           Here are some of my recent mobile development projects that showcase my technical skills and design capabilities.
         </p>
         
@@ -155,8 +134,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="project-card bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 opacity-0 group hover:border-blue-300/50 hover:-translate-y-2 cursor-pointer"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 group hover:border-blue-300/50 hover:-translate-y-2 cursor-pointer"
               onClick={() => openModal(project)}
               role="button"
               tabIndex={0}
