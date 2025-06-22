@@ -50,10 +50,11 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email for:", { name, email });
 
-    // Send email to hi@tade.me
+    // Send email to your verified email address (akintadeseun816@gmail.com)
+    // This will work in testing mode until you verify a domain
     const emailResponse = await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
-      to: ["hi@tade.me"],
+      to: ["akintadeseun816@gmail.com"], // Using your verified email temporarily
       subject: `New Contact Form Message from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -65,6 +66,7 @@ const handler = async (req: Request): Promise<Response> => {
         </div>
         <hr>
         <p><em>This message was sent from your portfolio contact form.</em></p>
+        <p><em>Reply to: ${email}</em></p>
       `,
     });
 
