@@ -74,12 +74,12 @@ const InteractiveSkills = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 bg-clip-text text-transparent">
+        <h2 className="text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-white dark:via-gray-100 dark:to-blue-400 bg-clip-text text-transparent">
           Technical Skills
         </h2>
-        <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
           Hover over each skill bubble to see detailed information and proficiency levels.
         </p>
         
@@ -100,11 +100,11 @@ const InteractiveSkills = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="w-full h-full bg-white rounded-full flex flex-col items-center justify-center">
-                  <div className="text-gray-700 mb-2">
+                <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full flex flex-col items-center justify-center">
+                  <div className="text-gray-700 dark:text-gray-300 mb-2">
                     {skill.icon}
                   </div>
-                  <span className="font-bold text-gray-800 text-sm text-center">{skill.name}</span>
+                  <span className="font-bold text-gray-800 dark:text-white text-sm text-center">{skill.name}</span>
                 </div>
                 
                 {/* Progress Ring */}
@@ -137,7 +137,7 @@ const InteractiveSkills = () => {
                 {/* Percentage */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.span
-                    className="text-xs font-bold text-white bg-black/20 px-2 py-1 rounded-full"
+                    className="text-xs font-bold text-white bg-black/20 dark:bg-white/20 px-2 py-1 rounded-full"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: activeSkill === skill.id ? 1 : 0 }}
                     transition={{ duration: 0.2 }}
@@ -149,7 +149,7 @@ const InteractiveSkills = () => {
               
               {/* Description Card */}
               <motion.div
-                className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white rounded-lg shadow-lg p-4 w-64 z-10"
+                className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-64 z-10 border border-gray-200 dark:border-gray-700"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ 
                   opacity: activeSkill === skill.id ? 1 : 0,
@@ -158,9 +158,9 @@ const InteractiveSkills = () => {
                 transition={{ duration: 0.2 }}
                 style={{ pointerEvents: activeSkill === skill.id ? 'auto' : 'none' }}
               >
-                <h4 className="font-bold text-gray-800 mb-2">{skill.name}</h4>
-                <p className="text-gray-600 text-sm">{skill.description}</p>
-                <div className="mt-3 bg-gray-200 rounded-full h-2">
+                <h4 className="font-bold text-gray-800 dark:text-white mb-2">{skill.name}</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">{skill.description}</p>
+                <div className="mt-3 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                   <motion.div
                     className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
                     initial={{ width: 0 }}
@@ -168,7 +168,7 @@ const InteractiveSkills = () => {
                     transition={{ duration: 0.5 }}
                   />
                 </div>
-                <span className="text-xs text-gray-500 mt-1 block">Proficiency: {skill.level}%</span>
+                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 block">Proficiency: {skill.level}%</span>
               </motion.div>
             </motion.div>
           ))}
