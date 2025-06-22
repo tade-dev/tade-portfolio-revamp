@@ -1,3 +1,4 @@
+
 import { Calendar, Award, Briefcase, ExternalLink } from "lucide-react";
 
 const Experience = () => {
@@ -52,7 +53,7 @@ const Experience = () => {
         <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-gradient-to-r from-amber-500/5 to-orange-500/5 blur-3xl"></div>
       </div>
       
-      <div className="section-container relative z-10">
+      <div className="container max-w-7xl mx-auto px-8 py-24 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
             Experience & Skills
