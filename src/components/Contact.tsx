@@ -60,10 +60,10 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-gray-50">
+    <section id="contact" className="bg-gray-50 dark:bg-gray-900">
       <div className="container max-w-7xl mx-auto px-8 py-24">
-        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center">Get In Touch</h2>
-        <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center text-gray-900 dark:text-white">Get In Touch</h2>
+        <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
           Interested in working together? Feel free to contact me for any project or collaboration.
         </p>
         
@@ -76,14 +76,14 @@ const Contact = () => {
                 className="flex items-start animate-fade-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="bg-gray-100 p-3 rounded-md mr-4">
-                  <item.icon className="text-gray-600" />
+                <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md mr-4">
+                  <item.icon className="text-gray-600 dark:text-gray-300" />
                 </div>
                 <div>
-                  <h3 className="font-medium text-lg">{item.title}</h3>
+                  <h3 className="font-medium text-lg text-gray-900 dark:text-white">{item.title}</h3>
                   <a 
                     href={item.link}
-                    className="text-gray-600 hover:text-gray-800 transition-colors"
+                    className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors"
                   >
                     {item.details}
                   </a>
@@ -93,10 +93,10 @@ const Contact = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="md:col-span-2 bg-white rounded-md p-6 shadow-sm border border-gray-100 animate-scale-in">
+          <div className="md:col-span-2 bg-white dark:bg-gray-800 rounded-md p-6 shadow-sm border border-gray-100 dark:border-gray-700 animate-scale-in">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Full Name
                 </label>
                 <Input
@@ -106,12 +106,12 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Your name"
                   required
-                  className="w-full"
+                  className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Email Address
                 </label>
                 <Input
@@ -122,12 +122,12 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="your@email.com"
                   required
-                  className="w-full"
+                  className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Message
                 </label>
                 <Textarea
@@ -138,13 +138,13 @@ const Contact = () => {
                   placeholder="Tell me about your project..."
                   required
                   rows={5}
-                  className="w-full"
+                  className="w-full dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                 />
               </div>
               
               <Button 
                 type="submit" 
-                className="w-full bg-gray-800 hover:bg-gray-700 p-6 rounded-md"
+                className="w-full bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 p-6 rounded-md text-white"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}

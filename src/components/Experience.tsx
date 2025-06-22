@@ -46,7 +46,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+    <section id="experience" className="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-gradient-to-r from-blue-500/5 to-purple-500/5 blur-3xl"></div>
@@ -55,10 +55,10 @@ const Experience = () => {
       
       <div className="container max-w-7xl mx-auto px-8 py-24 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 dark:from-gray-200 dark:via-gray-300 dark:to-gray-100 bg-clip-text text-transparent">
             Experience & Skills
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             With 4+ years of mobile development experience, I've mastered both cross-platform and native approaches.
           </p>
         </div>
@@ -73,28 +73,28 @@ const Experience = () => {
               {timeline.map((item, index) => (
                 <div 
                   key={index} 
-                  className="relative animate-slide-in bg-white/50 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="relative animate-slide-in bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all duration-300"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="absolute -left-[43px] w-7 h-7 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                     <Briefcase className="text-white" size={16} />
                   </div>
-                  <div className="flex items-center text-sm text-gray-500 mb-1">
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-1">
                     <Calendar size={14} className="mr-2" /> {item.year}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-800 mb-1">
+                  <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
                     {item.title}
                   </h4>
-                  <p className="text-blue-600 font-semibold flex items-center gap-2 mb-2">
+                  <p className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-2 mb-2">
                     {item.company} 
                     <a href={item.companyLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={14} className="text-blue-400 hover:text-blue-600 transition-colors" />
+                      <ExternalLink size={14} className="text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" />
                     </a>
                   </p>
-                  <p className="text-gray-500 text-sm mb-3">
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
                     {item.technologies} | {item.location}
                   </p>
-                  <ul className="text-gray-600 space-y-2 list-disc pl-5">
+                  <ul className="text-gray-600 dark:text-gray-300 space-y-2 list-disc pl-5">
                     {item.description.map((bullet, i) => (
                       <li key={i}>{bullet}</li>
                     ))}
@@ -113,14 +113,14 @@ const Experience = () => {
               {skills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="animate-fade-in bg-white/50 backdrop-blur-sm p-4 rounded-lg border border-gray-200/50 hover:shadow-md transition-all duration-300"
+                  className="animate-fade-in bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-gray-800">{skill.name}</span>
-                    <span className="text-gray-500 font-medium">{skill.level}%</span>
+                    <span className="font-semibold text-gray-800 dark:text-white">{skill.name}</span>
+                    <span className="text-gray-500 dark:text-gray-400 font-medium">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
                     <div 
                       className="bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 h-full rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${skill.level}%` }}

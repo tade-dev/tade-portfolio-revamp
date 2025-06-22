@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 // Tech icons data
@@ -48,9 +49,9 @@ const TechStackCarousel = () => {
   };
 
   return (
-    <div className="py-12 bg-gradient-to-r from-gray-50 to-gray-100 overflow-hidden">
+    <div className="py-12 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">Technologies I Work With</h3>
+        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800 dark:text-white">Technologies I Work With</h3>
         
         <div className="relative">
           {/* First carousel (left to right) */}
@@ -69,14 +70,14 @@ const TechStackCarousel = () => {
                 key={index} 
                 className="flex flex-col items-center group transition-transform hover:scale-110 cursor-pointer"
               >
-                <div className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 h-20 w-20 flex items-center justify-center">
+                <div className="bg-white dark:bg-gray-700 p-4 rounded-xl shadow-md hover:shadow-lg dark:shadow-gray-800/50 transition-all duration-300 h-20 w-20 flex items-center justify-center">
                   <img 
                     src={tech.image} 
                     alt={tech.name} 
-                    className="h-12 w-12 object-contain"
+                    className="h-12 w-12 object-contain dark:filter dark:brightness-90"
                   />
                 </div>
-                <span className="mt-2 text-xs font-medium text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="mt-2 text-xs font-medium text-gray-600 dark:text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">
                   {tech.name}
                 </span>
               </div>
@@ -84,8 +85,8 @@ const TechStackCarousel = () => {
           </div>
           
           {/* Gradient overlays */}
-          <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-gray-50 to-transparent"></div>
-          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-gray-50 to-transparent"></div>
+          <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-gray-50 dark:from-gray-800 to-transparent"></div>
+          <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-gray-50 dark:from-gray-800 to-transparent"></div>
         </div>
       </div>
       
