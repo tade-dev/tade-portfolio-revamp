@@ -7,6 +7,8 @@ import ThemeToggle from './ThemeToggle';
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const navItems = [
     { label: 'About', href: '#about' },
@@ -18,12 +20,23 @@ const Navigation = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      setIsScrolled(currentScrollY > 50);
+      
+      // Hide/show navigation based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -35,11 +48,13 @@ const Navigation = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    } ${
       isScrolled 
         ? 'bg-background/80 backdrop-blur-md border-b border-border' 
         : 'bg-transparent'
     }`}>
-      <nav className="container flex items-center justify-between h-16">
+      <nav className="container max-w-7xl mx-auto px-8 flex items-center justify-between h-16">
         {/* Brand */}
         <a 
           href="#hero" 
@@ -48,6 +63,7 @@ const Navigation = () => {
             e.preventDefault();
             scrollToSection('#hero');
           }}
+          aria-label="Akintade Oluwaseun - Mobile Developer"
         >
           tade.me
         </a>
@@ -77,7 +93,7 @@ const Navigation = () => {
             variant="ghost"
             size="icon"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation menu"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -87,7 +103,7 @@ const Navigation = () => {
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border">
-          <div className="container py-8">
+          <div className="container max-w-7xl mx-auto px-8 py-8">
             <nav className="flex flex-col space-y-8">
               {navItems.map((item) => (
                 <a
