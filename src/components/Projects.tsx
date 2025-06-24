@@ -42,15 +42,15 @@ const Projects = () => {
       role: "Full-Stack Mobile Developer - Built the complete mobile application, integrated Google Maps API, implemented real-time price tracking, and developed the backend infrastructure.",
       techStack: ["Flutter", "Google APIs", "Google Maps", "BLOC", "Firebase", "Real-time Database"],
       impact: {
-        rating: 4.6,
-        downloads: "30k+",
-        users: "15k+",
-        revenue: "$50k+"
+        rating: 5.0,
+        downloads: "100",
+        users: "20"
       },
       screenshots: [
-        "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png",
-        "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png",
-        "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png"
+        "/lovable-uploads/dd6f4bf5-e559-40de-9fd7-1e00c737112f.png",
+        "/lovable-uploads/80d920cb-2f39-445a-92d6-60bb83ce4f91.png",
+        "/lovable-uploads/c36e4df0-ef54-440f-9dc3-35262dab271f.png",
+        "/lovable-uploads/74023fea-5e88-49ab-b4cb-8390824f4eb4.png"
       ],
       tags: ["Flutter", "Google APIs", "Google Maps", "BLOC", "Firebase"],
       imageUrl: "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png",
