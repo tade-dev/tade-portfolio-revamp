@@ -41,7 +41,7 @@ const ProjectsPage = () => {
       title: "Vybaze",
       subtitle: "AI-Powered Music Feedback & Discovery Platform",
       description: "Vybaze is a cutting-edge music platform designed to help artists improve and promote their sound through AI-driven feedback and community engagement. The app empowers musicians to upload their tracks and receive structured, intelligent critiques from both users and an AI system.",
-      tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Stripe"],
+      tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Work in Progress"],
       imageUrl: "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
       githubUrl: "https://github.com/tade-dev/vybaze",
       liveUrl: "https://vybaze.xyz"
@@ -139,7 +139,11 @@ const ProjectsPage = () => {
                     {project.tags.map((tag, i) => (
                       <span 
                         key={i} 
-                        className="bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full text-xs font-medium border border-blue-200"
+                        className={`px-2.5 py-1 rounded-full text-xs font-medium border ${
+                          tag === 'Work in Progress' 
+                            ? 'bg-orange-100 text-orange-700 border-orange-200'
+                            : 'bg-blue-100 text-blue-700 border-blue-200'
+                        }`}
                       >
                         {tag}
                       </span>

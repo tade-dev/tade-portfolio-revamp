@@ -91,18 +91,14 @@ const Projects = () => {
       problem: "Musicians needed a platform to receive structured feedback on their music and connect with a community of fellow artists and fans.",
       role: "Lead iOS Developer - Developed the complete iOS application using SwiftUI, integrated AI feedback services, and built the user experience from concept to production.",
       techStack: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Stripe", "User Authentication"],
-      impact: {
-        rating: 4.9,
-        downloads: "10k+",
-        users: "5k+",
-        revenue: "$20k+"
-      },
+      impact: {},
       screenshots: [
-        "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
-        "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
-        "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png"
+        "/lovable-uploads/af6079f4-34f2-4ccf-8581-71e640924a08.png",
+        "/lovable-uploads/116c85f3-e7f0-4299-ab7c-b12c69ae2a1c.png",
+        "/lovable-uploads/e2ca8dc5-2b0d-4d6c-846e-a7d27503aff4.png",
+        "/lovable-uploads/bc585009-fe5b-479f-87b7-b0949229e1e4.png"
       ],
-      tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Stripe"],
+      tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Work in Progress"],
       imageUrl: "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
       githubUrl: "https://github.com/tade-dev/vybaze",
       liveUrl: "https://vybaze.xyz"
@@ -187,7 +183,11 @@ const Projects = () => {
                   {project.tags.slice(0, 3).map((tag, i) => (
                     <span 
                       key={i} 
-                      className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/50 dark:to-purple-900/50 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full text-xs font-medium border border-blue-200/50 dark:border-blue-700/50 hover:border-blue-300/50 transition-colors"
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-colors ${
+                        tag === 'Work in Progress' 
+                          ? 'bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/50 dark:to-red-900/50 text-orange-700 dark:text-orange-300 border-orange-200/50 dark:border-orange-700/50'
+                          : 'bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/50 dark:to-purple-900/50 text-blue-700 dark:text-blue-300 border-blue-200/50 dark:border-blue-700/50 hover:border-blue-300/50'
+                      }`}
                     >
                       {tag}
                     </span>
