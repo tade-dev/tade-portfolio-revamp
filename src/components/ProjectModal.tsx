@@ -68,7 +68,7 @@ const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) => {
           {/* Impact Metrics */}
           <section>
             <h3 className="text-lg font-heading font-semibold mb-3">Impact & Metrics</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {project.impact.rating && (
                 <div className="bg-yellow-50 dark:bg-yellow-900/20 p-4 rounded-lg text-center">
                   <div className="flex items-center justify-center gap-1 mb-1">

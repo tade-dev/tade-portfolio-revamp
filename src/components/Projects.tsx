@@ -1,4 +1,3 @@
-
 import { ExternalLink, Github, Star, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -18,15 +17,15 @@ const Projects = () => {
       role: "Lead Mobile Developer - Designed and implemented the complete mobile application architecture, integrated AI services, and built the user experience from concept to production.",
       techStack: ["Flutter", "Claude AI API", "Swift", "Firebase", "GetX", "RESTful APIs"],
       impact: {
-        rating: 4.8,
-        downloads: "50k+",
-        users: "25k+",
-        revenue: "$100k+"
+        rating: 5.0,
+        downloads: "1k+",
+        users: "200"
       },
       screenshots: [
-        "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
-        "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
-        "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png"
+        "/lovable-uploads/7562307a-e675-4afd-bdbc-ec326e328d8f.png",
+        "/lovable-uploads/bbda8c53-3069-4e79-89f0-fe8894ff9f4a.png",
+        "/lovable-uploads/5df961b1-a326-4210-9309-0040b5cacd8f.png",
+        "/lovable-uploads/6d7cda18-467a-486d-ba5d-6ecbe460a4af.png"
       ],
       tags: ["Flutter", "Claude AI API", "Swift", "Firebase", "Getx"],
       imageUrl: "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
