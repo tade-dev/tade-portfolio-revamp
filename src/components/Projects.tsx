@@ -68,9 +68,8 @@ const Projects = () => {
       techStack: ["Flutter", "Provider", "Firebase", "RESTful APIs", "User Authentication"],
       impact: {
         rating: 4.7,
-        downloads: "20k+",
-        users: "10k+",
-        revenue: "$30k+"
+        downloads: "500",
+        users: "234"
       },
       screenshots: [
         "/lovable-uploads/d1ad8a0e-24ec-430e-8df4-b68011d8da40.png",
