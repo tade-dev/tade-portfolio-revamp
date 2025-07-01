@@ -7,36 +7,28 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "CEO, FoodTech Startup",
-      company: "NutriFlow",
-      content: "Akintade delivered an exceptional Flutter app that exceeded our expectations. His attention to detail and technical expertise made our project a huge success.",
+      name: "John Adebayo",
+      role: "CTO of Zabira & CEO of Scnip",
+      company: "Zabira & Scnip",
+      content: "Working with Oluwaseun at Zabira and also across projects at Scnip has been a true advantage. His deep expertise in Flutter, attention to performance, and strong understanding of UI/UX have consistently elevated the quality of our mobile products. He's reliable, fast, and always thinking one step ahead — a valuable asset to any engineering team.",
       rating: 5,
-      avatar: "SJ"
+      avatar: "JA"
     },
     {
-      name: "Michael Chen",
-      role: "Product Manager",
-      company: "TechVentures",
-      content: "Working with Akintade was a game-changer. He transformed our complex requirements into a beautiful, user-friendly mobile app with impressive performance.",
+      name: "Isaac John",
+      role: "CEO",
+      company: "Zabira",
+      content: "Oluwaseun has played a key role in transforming the Zabira mobile app experience. From integrating core features like Buy, Sell, and Swap to refining UI flows, he brought precision and speed to our product. He's the kind of developer who doesn't just execute — he collaborates, innovates, and delivers.",
       rating: 5,
-      avatar: "MC"
+      avatar: "IJ"
     },
     {
-      name: "Emily Rodriguez",
-      role: "Founder",
-      company: "GreenLife Apps",
-      content: "Akintade's SwiftUI expertise helped us create an iOS app that our users love. His code is clean, efficient, and follows best practices throughout.",
+      name: "Colina & Hripsime",
+      role: "Founders & Creators",
+      company: "ScreenKit",
+      content: "Oluwaseun joined the ScreenKit team and made an immediate impact. From rebuilding the app in SwiftUI to optimizing performance and implementing creative onboarding flows, his contributions helped us scale and refine the product for over a million users. He's sharp, dependable, and a joy to work with.",
       rating: 5,
-      avatar: "ER"
-    },
-    {
-      name: "David Kim",
-      role: "CTO",
-      company: "InnovateMobile",
-      content: "Exceptional mobile development skills! Akintade delivered our project on time and handled complex integrations with ease. Highly recommended.",
-      rating: 5,
-      avatar: "DK"
+      avatar: "CH"
     }
   ];
 

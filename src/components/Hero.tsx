@@ -78,7 +78,8 @@ const Hero = () => {
                 <img
                   src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
                   alt="Akintade - Mobile Developer"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: 'center top' }}
                   decoding="async"
                   loading="lazy"
                 />
