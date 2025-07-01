@@ -71,23 +71,37 @@ const Hero = () => {
           </div>
           
           {/* Hero Image */}
-          <div className="relative max-w-lg mx-auto lg:max-w-none">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
-                alt="Akintade working on mobile app code"
-                className="w-full h-auto max-w-full"
-                width="1920"
-                height="1080"
-                decoding="async"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-            </div>
-            
-            {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 lg:-top-8 lg:-right-8 bg-primary text-primary-foreground px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm lg:text-base font-semibold shadow-lg">
-              Available for work
+          <div className="relative max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+            <div className="relative group">
+              {/* Main image container */}
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-primary/10 to-secondary/20 border border-primary/20">
+                <img
+                  src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
+                  alt="Akintade - Mobile Developer"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  decoding="async"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              </div>
+              
+              {/* Floating elements */}
+              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-fade-in">
+                Available
+              </div>
+              
+              {/* Tech stack floating badges */}
+              <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm border border-gray-200 px-3 py-2 rounded-xl shadow-lg animate-fade-in" style={{ animationDelay: '200ms' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-600 font-semibold text-sm">Flutter</span>
+                </div>
+              </div>
+              
+              <div className="absolute top-1/4 -left-6 bg-white/90 backdrop-blur-sm border border-gray-200 px-3 py-2 rounded-xl shadow-lg animate-fade-in" style={{ animationDelay: '400ms' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-orange-600 font-semibold text-sm">SwiftUI</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
