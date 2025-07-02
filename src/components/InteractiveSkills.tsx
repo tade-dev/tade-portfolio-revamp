@@ -1,178 +1,183 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Server, Brain, Rocket, Database, Code } from 'lucide-react';
+import { Smartphone, Server, Brain, Rocket, Database, Code, Palette, TestTube, Upload, Store } from 'lucide-react';
 
 const InteractiveSkills = () => {
-  const [activeSkill, setActiveSkill] = useState<string | null>(null);
-  
-  const skills = [
+  const skillCategories = [
     {
-      id: 'flutter',
-      name: 'Flutter',
-      level: 95,
-      icon: <Smartphone className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-blue-400 to-cyan-400',
-      description: 'Cross-platform mobile development with beautiful UIs'
+      title: "Frameworks & Platforms",
+      icon: <Smartphone className="h-5 w-5" />,
+      skills: [
+        { name: "Flutter", level: 95, color: "bg-blue-500" },
+        { name: "SwiftUI", level: 90, color: "bg-orange-500" },
+        { name: "iOS SDK", level: 88, color: "bg-gray-600" },
+        { name: "Android SDK", level: 85, color: "bg-green-600" }
+      ]
     },
     {
-      id: 'dart',
-      name: 'Dart',
-      level: 92,
-      icon: <Code className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-green-400 to-blue-400',
-      description: 'Modern programming language for Flutter development'
+      title: "Languages",
+      icon: <Code className="h-5 w-5" />,
+      skills: [
+        { name: "Dart", level: 95, color: "bg-blue-600" },
+        { name: "Swift", level: 90, color: "bg-orange-600" },
+        { name: "JavaScript", level: 80, color: "bg-yellow-500" },
+        { name: "TypeScript", level: 75, color: "bg-blue-700" }
+      ]
     },
     {
-      id: 'swiftui',
-      name: 'SwiftUI',
-      level: 90,
-      icon: <Rocket className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-orange-400 to-red-400',
-      description: 'Native iOS development with declarative UI'
+      title: "Tools & Technologies",
+      icon: <Server className="h-5 w-5" />,
+      skills: [
+        { name: "Firebase", level: 95, color: "bg-orange-500" },
+        { name: "Supabase", level: 85, color: "bg-green-500" },
+        { name: "RESTful APIs", level: 95, color: "bg-purple-500" },
+        { name: "Git & CI/CD", level: 87, color: "bg-gray-700" }
+      ]
     },
     {
-      id: 'mvvm',
-      name: 'MVVM',
-      level: 90,
-      icon: <Brain className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-purple-400 to-pink-400',
-      description: 'Model-View-ViewModel architecture pattern'
+      title: "UI/UX & Animations",
+      icon: <Palette className="h-5 w-5" />,
+      skills: [
+        { name: "Custom Animations", level: 90, color: "bg-pink-500" },
+        { name: "Material Design", level: 92, color: "bg-indigo-500" },
+        { name: "Human Interface", level: 88, color: "bg-blue-400" },
+        { name: "Responsive Design", level: 90, color: "bg-teal-500" }
+      ]
     },
     {
-      id: 'coredata',
-      name: 'CoreData',
-      level: 90,
-      icon: <Database className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-indigo-400 to-purple-400',
-      description: 'iOS data persistence and object graph management'
+      title: "State Management",
+      icon: <Brain className="h-5 w-5" />,
+      skills: [
+        { name: "BLoC Pattern", level: 92, color: "bg-purple-600" },
+        { name: "Provider", level: 90, color: "bg-green-600" },
+        { name: "MVVM", level: 90, color: "bg-indigo-600" },
+        { name: "GetX", level: 85, color: "bg-red-500" }
+      ]
     },
     {
-      id: 'swift',
-      name: 'Swift',
-      level: 85,
-      icon: <Rocket className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-red-400 to-orange-400',
-      description: 'Powerful programming language for iOS development'
+      title: "Testing & Debugging",
+      icon: <TestTube className="h-5 w-5" />,
+      skills: [
+        { name: "Unit Testing", level: 85, color: "bg-green-500" },
+        { name: "Widget Testing", level: 80, color: "bg-blue-500" },
+        { name: "XCTest", level: 82, color: "bg-orange-500" },
+        { name: "Performance Profiling", level: 88, color: "bg-purple-500" }
+      ]
     },
     {
-      id: 'firebase',
-      name: 'Firebase',
-      level: 95,
-      icon: <Server className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-yellow-400 to-orange-400',
-      description: 'Backend-as-a-Service platform for mobile apps'
+      title: "Deployment & Stores",
+      icon: <Upload className="h-5 w-5" />,
+      skills: [
+        { name: "App Store Connect", level: 90, color: "bg-blue-600" },
+        { name: "Google Play Console", level: 92, color: "bg-green-600" },
+        { name: "TestFlight", level: 88, color: "bg-orange-600" },
+        { name: "Shorebird", level: 80, color: "bg-teal-600" }
+      ]
     },
     {
-      id: 'apis',
-      name: 'RESTful APIs',
-      level: 95,
-      icon: <Server className="h-6 w-6 lg:h-8 lg:w-8" />,
-      color: 'from-teal-400 to-green-400',
-      description: 'API design and integration expertise'
+      title: "AI Integration",
+      icon: <Brain className="h-5 w-5" />,
+      skills: [
+        { name: "OpenAI APIs", level: 85, color: "bg-emerald-500" },
+        { name: "Claude Integration", level: 80, color: "bg-purple-500" },
+        { name: "ML Kit", level: 75, color: "bg-blue-500" },
+        { name: "Core ML", level: 70, color: "bg-orange-500" }
+      ]
     }
   ];
 
   return (
-    <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-white dark:via-gray-100 dark:to-blue-400 bg-clip-text text-transparent">
-          Technical Skills
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-center mb-12 lg:mb-16 max-w-2xl mx-auto px-4">
-          Hover over each skill bubble to see detailed information and proficiency levels.
-        </p>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
-          {skills.map((skill, index) => (
+    <section className="py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-800 via-gray-900 to-blue-800 dark:from-white dark:via-gray-100 dark:to-blue-400 bg-clip-text text-transparent">
+            Technical Skills, Languages & Tools
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg">
+            Comprehensive expertise in mobile development with production-grade experience across frameworks, languages, and modern development tools.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {skillCategories.map((category, categoryIndex) => (
             <motion.div
-              key={skill.id}
-              className="relative cursor-pointer"
-              onMouseEnter={() => setActiveSkill(skill.id)}
-              onMouseLeave={() => setActiveSkill(null)}
+              key={category.title}
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: categoryIndex * 0.1 }}
             >
-              {/* Skill Bubble */}
-              <motion.div
-                className={`relative w-24 h-24 lg:w-32 lg:h-32 mx-auto rounded-full bg-gradient-to-br ${skill.color} p-1 shadow-lg`}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="w-full h-full bg-white dark:bg-gray-800 rounded-full flex flex-col items-center justify-center">
-                  <div className="text-gray-700 dark:text-gray-300 mb-1 lg:mb-2">
-                    {skill.icon}
-                  </div>
-                  <span className="font-bold text-gray-800 dark:text-white text-xs lg:text-sm text-center px-1">{skill.name}</span>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-primary/10 dark:bg-primary/20 rounded-lg text-primary">
+                  {category.icon}
                 </div>
-                
-                {/* Progress Ring */}
-                <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle
-                    cx="50"
-                    cy="50"
-                    r="45"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.3)"
-                    strokeWidth="2"
-                  />
-                  <motion.circle
-                    cx="50"
-                    cy="50"
-                    r="45"
-                    fill="none"
-                    stroke="rgba(255,255,255,0.9)"
-                    strokeWidth="3"
-                    strokeDasharray={`${2 * Math.PI * 45}`}
-                    initial={{ strokeDashoffset: 2 * Math.PI * 45 }}
-                    animate={{ 
-                      strokeDashoffset: 2 * Math.PI * 45 * (1 - skill.level / 100)
-                    }}
-                    transition={{ duration: 2, delay: index * 0.2 }}
-                    strokeLinecap="round"
-                  />
-                </svg>
-                
-                {/* Percentage */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.span
-                    className="text-xs font-bold text-white bg-black/20 dark:bg-white/20 px-2 py-1 rounded-full"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: activeSkill === skill.id ? 1 : 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {skill.level}%
-                  </motion.span>
-                </div>
-              </motion.div>
-              
-              {/* Description Card */}
-              <motion.div
-                className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-56 lg:w-64 z-10 border border-gray-200 dark:border-gray-700"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ 
-                  opacity: activeSkill === skill.id ? 1 : 0,
-                  y: activeSkill === skill.id ? 0 : -10
-                }}
-                transition={{ duration: 0.2 }}
-                style={{ pointerEvents: activeSkill === skill.id ? 'auto' : 'none' }}
-              >
-                <h4 className="font-bold text-gray-800 dark:text-white mb-2">{skill.name}</h4>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{skill.description}</p>
-                <div className="mt-3 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
+                  {category.title}
+                </h3>
+              </div>
+
+              <div className="space-y-4">
+                {category.skills.map((skill, skillIndex) => (
                   <motion.div
-                    className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
-                    initial={{ width: 0 }}
-                    animate={{ width: activeSkill === skill.id ? `${skill.level}%` : 0 }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-                <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 block">Proficiency: {skill.level}%</span>
-              </motion.div>
+                    key={skill.name}
+                    className="group"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05) }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                        {skill.name}
+                      </span>
+                      <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+                      <motion.div
+                        className={`h-full rounded-full ${skill.color} transition-all duration-500 group-hover:brightness-110`}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) }}
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Professional Summary */}
+        <motion.div
+          className="mt-16 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 border border-blue-200 dark:border-gray-600"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+        >
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              Production-Ready Mobile Engineer
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Specialized in building scalable mobile applications with <span className="font-semibold text-blue-600 dark:text-blue-400">Flutter</span> and <span className="font-semibold text-orange-600 dark:text-orange-400">SwiftUI</span>. 
+              Experienced in full-stack mobile development, from architecture design to App Store deployment, 
+              with a proven track record of delivering high-performance apps for thousands of users.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm font-medium">
+                4+ Years Experience
+              </span>
+              <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
+                50+ Projects Delivered
+              </span>
+              <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">
+                Cross-Platform Expert
+              </span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
