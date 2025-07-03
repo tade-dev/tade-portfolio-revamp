@@ -10,10 +10,13 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import InteractiveSkills from '@/components/InteractiveSkills';
 import TechStackCarousel from '@/components/TechStackCarousel';
+import ScrollProgress from '@/components/ScrollProgress';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <ScrollProgress />
       <Navigation />
       <Hero />
       <TechStackCarousel />
@@ -24,6 +27,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
