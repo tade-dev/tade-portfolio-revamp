@@ -17,10 +17,10 @@ const Index = () => {
       <Navigation />
       <Hero />
       <TechStackCarousel />
-      <About />
       <InteractiveSkills />
       <Experience />
       <Projects />
+      <About />
       <Testimonials />
       <Contact />
       <Footer />

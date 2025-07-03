@@ -30,72 +30,39 @@ const About = () => {
         </div>
 
         {/* Personal Story */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '300ms' }}>
+        <div className="mb-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
           <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-200/50 dark:border-gray-700/50">
             <div className="flex items-center gap-3 mb-6">
               <Heart className="text-pink-500" size={24} />
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white">My Journey</h3>
             </div>
-            <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+            <div className="text-gray-600 dark:text-gray-300 leading-relaxed">
               <p>
-                Hi! I'm Oluwaseun Akintade, a passionate mobile developer who fell in love with creating digital experiences 
-                that make people's lives easier and more enjoyable. My journey into tech started with curiosity about how 
-                mobile apps work, and it quickly evolved into a deep passion for crafting beautiful, functional applications.
-              </p>
-              <p>
-                Based in Nigeria, I've spent years honing my skills in Flutter and Swift, building everything from 
-                AI-powered food platforms to habit tracking apps. What drives me is the ability to transform ideas 
-                into reality through code, creating solutions that thousands of users interact with daily.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
-                or mentoring aspiring developers in my community. I believe technology should be accessible and 
-                empowering for everyone.
+                Hi! I'm Oluwaseun Akintade, a passionate mobile developer based in Nigeria. I specialize in Flutter and SwiftUI, 
+                building scalable mobile applications that thousands of users interact with daily. My journey started with curiosity 
+                about how mobile apps work and evolved into a mission to create digital experiences that make people's lives easier.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Hobbies Section */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '400ms' }}>
-          <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-8 text-center">When I'm Not Coding</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {hobbies.map((hobby, index) => (
-              <div 
-                key={index}
-                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="p-3 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/50 rounded-lg">
-                    <hobby.icon className="text-blue-600 dark:text-blue-400" size={20} />
-                  </div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white">{hobby.name}</h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">{hobby.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Technical Philosophy */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: '500ms' }}>
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-200/50 dark:border-gray-700/50">
-            <div className="flex items-center gap-3 mb-6">
-              <Code className="text-blue-500 dark:text-blue-400" size={24} />
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Why I Love What I Do</h3>
+        {/* Quick Facts */}
+        <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200/50 dark:border-gray-700/50 text-center">
+              <Code className="mx-auto mb-3 text-blue-500 dark:text-blue-400" size={24} />
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">4+ Years</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Mobile Development</p>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
-              {techAspects.map((aspect, index) => (
-                <div key={index} className="space-y-2">
-                  <h4 className="font-semibold text-gray-800 dark:text-white">{aspect.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{aspect.description}</p>
-                </div>
-              ))}
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200/50 dark:border-gray-700/50 text-center">
+              <Coffee className="mx-auto mb-3 text-orange-500" size={24} />
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">50+ Projects</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Delivered Successfully</p>
             </div>
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-100 dark:border-blue-800/50">
-              <p className="text-gray-700 dark:text-gray-200 italic text-center">
-                "Code is poetry, and every app is a story waiting to be told. I'm here to make sure it's a beautiful one."
-              </p>
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 shadow-sm border border-gray-200/50 dark:border-gray-700/50 text-center">
+              <Music className="mx-auto mb-3 text-purple-500" size={24} />
+              <h4 className="font-semibold text-gray-800 dark:text-white mb-2">Cross-Platform</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-300">Flutter & SwiftUI Expert</p>
             </div>
           </div>
         </div>
