@@ -32,8 +32,7 @@ const About = () => {
   const achievements = [
     { icon: Trophy, value: "4+", label: "Years Experience", color: "text-yellow-500" },
     { icon: Target, value: "50+", label: "Projects Delivered", color: "text-blue-500" },
-    { icon: Zap, value: "99%", label: "Client Satisfaction", color: "text-green-500" },
-    { icon: Users, value: "1M+", label: "App Downloads", color: "text-purple-500" }
+    { icon: Zap, value: "99%", label: "Client Satisfaction", color: "text-green-500" }
   ];
 
   const skills = [
@@ -156,7 +155,7 @@ const About = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {achievements.map((achievement, index) => (
             <motion.div
