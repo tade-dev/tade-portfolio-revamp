@@ -11,7 +11,7 @@ const Hero = () => {
   };
 
   const openResume = () => {
-    window.open('https://drive.google.com/file/d/1CDN3Y9R7YrF9r4FxfTGENLNg_Y_FCOAg/view?usp=drive_link', '_blank');
+    window.open('https://drive.google.com/file/d/18-qbXo3Zb-uz5tVHQCFkYfX_jfdXZVvL/view?usp=sharing', '_blank');
   };
 
   return (
