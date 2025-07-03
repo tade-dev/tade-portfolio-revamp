@@ -100,6 +100,22 @@ img {
   box-sizing: border-box;
 }
 
+/* Custom Background Patterns */
+.bg-grid-pattern {
+  background-image: radial-gradient(circle, rgba(67, 56, 202, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Custom Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
   * {

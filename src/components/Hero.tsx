@@ -1,8 +1,75 @@
 
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight, FileText, Code, Terminal, Smartphone, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
+  const [currentCode, setCurrentCode] = useState(0);
+  const [typedText, setTypedText] = useState('');
+
+  const codeSnippets = [
+    `// Flutter Widget
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: AnimatedContainer(
+      duration: Duration(milliseconds: 300),
+      child: Column(children: [...]),
+    ),
+  );
+}`,
+    `// SwiftUI View
+struct ContentView: View {
+  @State private var isAnimating = false
+  
+  var body: some View {
+    VStack {
+      Text("Hello World")
+        .animation(.spring(), value: isAnimating)
+    }
+  }
+}`,
+    `// Performance Optimization
+class PerformanceManager {
+  static optimize() {
+    // Memory management
+    // Lazy loading
+    // Efficient rendering
+  }
+}`
+  ];
+
+  const techStack = [
+    { name: 'Flutter', color: 'text-blue-400', icon: '🚀' },
+    { name: 'SwiftUI', color: 'text-orange-400', icon: '📱' },
+    { name: 'Dart', color: 'text-cyan-400', icon: '⚡' },
+    { name: 'Swift', color: 'text-red-400', icon: '🔥' }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCode((prev) => (prev + 1) % codeSnippets.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const text = "Mobile Developer";
+    let index = 0;
+    setTypedText('');
+    
+    const typeInterval = setInterval(() => {
+      if (index < text.length) {
+        setTypedText(text.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(typeInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typeInterval);
+  }, []);
+
   const scrollToContact = () => {
     const contactSection = document.querySelector('#contact');
     if (contactSection) {
@@ -15,66 +82,165 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-secondary/20 pt-16 overflow-hidden">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900/20 to-gray-900 pt-16 overflow-hidden relative">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-spin-slow"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
+
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-8 leading-tight font-heading">
+          <motion.div 
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Tech label */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2 mb-6"
+            >
+              <Terminal className="w-4 h-4 text-blue-400" />
+              <span className="text-blue-400 text-sm font-medium">Senior Mobile Engineer</span>
+            </motion.div>
+
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-8 leading-tight font-heading text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               Building{' '}
-              <span className="text-primary">Mobile</span>{' '}
-              Excellence
-            </h1>
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                Next-Gen
+              </span>{' '}
+              <br />
+              Mobile Apps
+            </motion.h1>
             
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              I'm <strong className="text-foreground">Akintade Oluwaseun</strong>, a passionate mobile developer 
-              crafting beautiful, high-performance applications with{' '}
-              <span className="text-blue-600 font-semibold">Flutter</span> and{' '}
-              <span className="text-orange-600 font-semibold">SwiftUI</span>.
-            </p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              I'm <strong className="text-white">Akintade Oluwaseun</strong>, a{' '}
+              <span className="text-cyan-400 font-mono">
+                {typedText}
+                <span className="animate-pulse">|</span>
+              </span>
+              <br />
+              crafting high-performance applications with{' '}
+              <span className="text-blue-400 font-semibold">Flutter</span> and{' '}
+              <span className="text-orange-400 font-semibold">SwiftUI</span>.
+            </motion.div>
             
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 mb-8 lg:mb-12">
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-primary">4+</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl lg:text-3xl font-bold text-primary">50+</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Projects Built</div>
-              </div>
-            </div>
+            {/* Tech Stack Pills */}
+            <motion.div 
+              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 lg:mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+            >
+              {techStack.map((tech, index) => (
+                <motion.div
+                  key={tech.name}
+                  className="flex items-center gap-2 bg-gray-800/50 border border-gray-700 rounded-full px-4 py-2 backdrop-blur-sm"
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(59, 130, 246, 0.1)' }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="text-lg">{tech.icon}</span>
+                  <span className={`text-sm font-medium ${tech.color}`}>{tech.name}</span>
+                </motion.div>
+              ))}
+            </motion.div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.9 }}
+            >
               <Button 
                 size="lg" 
-                className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 font-semibold"
+                className="text-base lg:text-lg px-8 py-6 font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 border-0 shadow-lg shadow-blue-500/25"
                 onClick={scrollToContact}
                 aria-label="Contact Akintade for mobile development services"
               >
-                Hire Me
-                <ArrowRight className="ml-2 h-4 w-4 lg:h-5 lg:w-5" />
+                <Zap className="mr-2 h-5 w-5" />
+                Let's Build Something
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
               <Button 
                 variant="outline"
                 size="lg" 
-                className="text-base lg:text-lg px-6 lg:px-8 py-4 lg:py-6 font-semibold"
+                className="text-base lg:text-lg px-8 py-6 font-semibold border-gray-600 text-gray-300 hover:bg-gray-800 hover:text-white"
                 onClick={openResume}
                 aria-label="View Akintade's resume"
               >
-                <FileText className="mr-2 h-4 w-4 lg:h-5 lg:w-5" />
-                Resume
+                <FileText className="mr-2 h-5 w-5" />
+                View Resume
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
           
-          {/* Hero Image */}
-          <div className="relative max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
-            <div className="relative group">
-              {/* Main image container */}
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[420px] lg:h-[420px] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-primary/10 to-secondary/20 border border-primary/20">
+          {/* Code Display & Profile */}
+          <motion.div 
+            className="relative max-w-lg mx-auto"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {/* Code Editor Window */}
+            <div className="relative bg-gray-900/90 backdrop-blur-sm border border-gray-700 rounded-2xl overflow-hidden shadow-2xl mb-8">
+              {/* Window Header */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-gray-700">
+                <div className="flex gap-2">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                </div>
+                <div className="flex items-center gap-2 ml-4">
+                  <Code className="w-4 h-4 text-gray-400" />
+                  <span className="text-gray-400 text-sm font-mono">mobile_app.{currentCode === 0 ? 'dart' : currentCode === 1 ? 'swift' : 'js'}</span>
+                </div>
+              </div>
+              
+              {/* Code Content */}
+              <div className="p-4 h-64 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.pre
+                    key={currentCode}
+                    className="text-sm text-gray-300 font-mono leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <code>{codeSnippets[currentCode]}</code>
+                  </motion.pre>
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Profile Image */}
+            <motion.div 
+              className="relative group mx-auto w-64 h-64"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30">
                 <img
                   src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
                   alt="Akintade - Mobile Developer"
@@ -83,28 +249,39 @@ const Hero = () => {
                   decoding="async"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent" />
               </div>
               
-              {/* Floating elements */}
-              <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg animate-fade-in">
+              {/* Status Badge */}
+              <motion.div
+                className="absolute -top-3 -right-3 bg-green-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                 Available
-              </div>
+              </motion.div>
               
-              {/* Tech stack floating badges */}
-              <div className="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-sm border border-gray-200 px-3 py-2 rounded-xl shadow-lg animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <div className="flex items-center gap-2">
-                  <span className="text-blue-600 font-semibold text-sm">Flutter</span>
-                </div>
-              </div>
+              {/* Floating Tech Icons */}
+              <motion.div
+                className="absolute -bottom-4 -left-4 bg-blue-500/90 backdrop-blur-sm text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2"
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Smartphone className="w-5 h-5" />
+                <span className="font-semibold text-sm">Flutter Dev</span>
+              </motion.div>
               
-              <div className="absolute top-1/4 -left-6 bg-white/90 backdrop-blur-sm border border-gray-200 px-3 py-2 rounded-xl shadow-lg animate-fade-in" style={{ animationDelay: '400ms' }}>
-                <div className="flex items-center gap-2">
-                  <span className="text-orange-600 font-semibold text-sm">SwiftUI</span>
-                </div>
-              </div>
-            </div>
-          </div>
+              <motion.div
+                className="absolute top-1/4 -right-6 bg-orange-500/90 backdrop-blur-sm text-white px-4 py-3 rounded-xl shadow-lg flex items-center gap-2"
+                animate={{ x: [0, -5, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <Code className="w-5 h-5" />
+                <span className="font-semibold text-sm">iOS Expert</span>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>
