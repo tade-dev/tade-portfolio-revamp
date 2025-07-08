@@ -202,8 +202,8 @@ class PerformanceManager {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Code Editor Window */}
-            <div className="relative bg-muted/90 backdrop-blur-sm border border-border rounded-2xl overflow-hidden shadow-2xl mb-8">
+            {/* Code Editor Window - Hidden on mobile */}
+            <div className="relative bg-muted/90 backdrop-blur-sm border border-border rounded-2xl overflow-hidden shadow-2xl mb-8 hidden md:block">
               {/* Window Header */}
               <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b border-border">
                 <div className="flex gap-2">
@@ -231,6 +231,47 @@ class PerformanceManager {
                     <code>{codeSnippets[currentCode]}</code>
                   </motion.pre>
                 </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Mobile Tech Showcase - Visible only on mobile */}
+            <div className="md:hidden mb-8">
+              <div className="grid grid-cols-2 gap-4">
+                <motion.div
+                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <Smartphone className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <span className="text-sm font-semibold text-primary">Flutter</span>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-xl p-4 text-center"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                >
+                  <Code className="w-8 h-8 text-accent mx-auto mb-2" />
+                  <span className="text-sm font-semibold text-accent">SwiftUI</span>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-muted/50 backdrop-blur-sm border border-border rounded-xl p-4 text-center"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                >
+                  <Terminal className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                  <span className="text-sm font-semibold text-muted-foreground">Native</span>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                >
+                  <Zap className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <span className="text-sm font-semibold text-primary">Fast</span>
+                </motion.div>
               </div>
             </div>
 
