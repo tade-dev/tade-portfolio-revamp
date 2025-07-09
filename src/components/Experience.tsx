@@ -2,19 +2,6 @@
 import { Calendar, Award, Briefcase, ExternalLink } from "lucide-react";
 
 const Experience = () => {
-  const skills = [
-    { name: "Flutter", level: 95 },
-    { name: "Firebase", level: 95 },
-    { name: "RESTful APIs", level: 95 },
-    { name: "Dart", level: 92 },
-    { name: "SwiftUI", level: 90 },
-    { name: "MVVM", level: 90 },
-    { name: "CoreData", level: 90 },
-    { name: "Git & CI/CD", level: 87 },
-    { name: "Swift", level: 85 },
-    { name: "Javascript", level: 80 },
-    { name: "Vapor", level: 75 },
-  ];
   
   const timeline = [
     {
@@ -56,76 +43,50 @@ const Experience = () => {
       <div className="container max-w-7xl mx-auto px-8 py-24 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 dark:from-gray-200 dark:via-gray-300 dark:to-gray-100 bg-clip-text text-transparent">
-            Experience & Skills
+            Work Experience
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            With 4+ years of mobile development experience, I've mastered both cross-platform and native approaches.
+            Professional journey building high-impact mobile applications with 4+ years of experience across fintech and enterprise platforms.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-16 mb-20">
+        <div className="max-w-4xl mx-auto">
           <div className="space-y-10 animate-fade-in">
-            <h3 className="text-2xl font-bold flex items-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              <Award className="mr-3 text-blue-500" /> Experience
-            </h3>
-            
             <div className="relative pl-8 border-l-2 border-gradient-to-b from-blue-400 to-purple-400 space-y-14">
               {timeline.map((item, index) => (
                 <div 
                   key={index} 
-                  className="relative animate-slide-in bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-md transition-all duration-300"
+                  className="relative animate-slide-in bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-sm hover:shadow-xl transition-all duration-300 group"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
-                  <div className="absolute -left-[43px] w-7 h-7 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute -left-[43px] w-7 h-7 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Briefcase className="text-white" size={16} />
                   </div>
-                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-2">
                     <Calendar size={14} className="mr-2" /> {item.year}
                   </div>
-                  <h4 className="text-xl font-bold text-gray-800 dark:text-white mb-1">
+                  <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {item.title}
                   </h4>
-                  <p className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-2 mb-2">
+                  <p className="text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-2 mb-1">
                     {item.company} 
                     <a href={item.companyLink} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={14} className="text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" />
+                      <ExternalLink size={16} className="text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors" />
                     </a>
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-3">
-                    {item.technologies} | {item.location}
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                    {item.location}
                   </p>
-                  <ul className="text-gray-600 dark:text-gray-300 space-y-2 list-disc pl-5">
+                  <div className="mb-4">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300">
+                      {item.technologies}
+                    </span>
+                  </div>
+                  <ul className="text-gray-600 dark:text-gray-300 space-y-3 list-disc pl-5">
                     {item.description.map((bullet, i) => (
-                      <li key={i}>{bullet}</li>
+                      <li key={i} className="leading-relaxed">{bullet}</li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="animate-fade-in" style={{ animationDelay: '300ms' }}>
-            <h3 className="text-2xl font-bold flex items-center mb-10 bg-gradient-to-r from-purple-600 to-amber-600 bg-clip-text text-transparent">
-              <Award className="mr-3 text-purple-500" /> Skills
-            </h3>
-            
-            <div className="space-y-7">
-              {skills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="animate-fade-in bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg border border-gray-200/50 dark:border-gray-700/50 hover:shadow-md transition-all duration-300"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex justify-between mb-2">
-                    <span className="font-semibold text-gray-800 dark:text-white">{skill.name}</span>
-                    <span className="text-gray-500 dark:text-gray-400 font-medium">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full overflow-hidden">
-                    <div 
-                      className="bg-gradient-to-r from-blue-500 via-purple-500 to-amber-500 h-full rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
                 </div>
               ))}
             </div>
