@@ -7,6 +7,7 @@ import ProjectModal from "./ProjectModal";
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAll, setShowAll] = useState(false);
 
   const projects = [
     {
@@ -101,6 +102,38 @@ const Projects = () => {
       imageUrl: "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
       githubUrl: "https://github.com/tade-dev/vybaze",
       liveUrl: "https://vybaze.xyz"
+    },
+    {
+      title: "Hubbit",
+      subtitle: "Habit Tracker Platform",
+      description: "Hubbit is a beautifully designed habit-tracking app that helps users build better routines through simplicity, motivation, and delight.",
+      problem: "Users struggled to maintain consistent habits and needed a simple, motivating app to track their daily routines and build better lifestyle patterns.",
+      role: "iOS Developer - Developed the complete iOS application using SwiftUI, implementing habit tracking features and designing the user experience.",
+      techStack: ["SwiftUI", "MVVM", "CoreData", "SF Symbols", "UserNotifications"],
+      impact: {},
+      screenshots: [
+        "/lovable-uploads/0f2ef556-5b65-40bd-ac47-0d25720af73f.png"
+      ],
+      tags: ["SwiftUI", "MVVM", "CoreData", "Work in Progress"],
+      imageUrl: "/lovable-uploads/0f2ef556-5b65-40bd-ac47-0d25720af73f.png",
+      githubUrl: "https://github.com/tade-dev/hubbit",
+      liveUrl: "#"
+    },
+    {
+      title: "How Much App",
+      subtitle: "Proposal Generator for Developers",
+      description: "A platform that generates a pricing proposal for developers based on their experiences and skillset.",
+      problem: "Freelance developers struggled to price their services accurately and create professional proposals quickly for potential clients.",
+      role: "Full-Stack Developer - Built the complete application including the AI integration for proposal generation and the user interface.",
+      techStack: ["Flutter", "Dart", "OpenAI API", "Node.js", "Firebase"],
+      impact: {},
+      screenshots: [
+        "/lovable-uploads/be41dae6-59b8-4ea4-8da9-42f789b5caa7.png"
+      ],
+      tags: ["Flutter", "Dart", "OpenAI API", "Node.js"],
+      imageUrl: "/lovable-uploads/be41dae6-59b8-4ea4-8da9-42f789b5caa7.png",
+      githubUrl: "https://github.com/tade-dev/how_much_app",
+      liveUrl: "#"
     }
   ];
 
@@ -125,7 +158,7 @@ const Projects = () => {
         </p>
         
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {(showAll ? projects : projects.slice(0, 4)).map((project, index) => (
             <div 
               key={index}
               className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 group hover:border-blue-300/50 hover:-translate-y-2 cursor-pointer"
@@ -218,11 +251,17 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-16">
-          <Button variant="outline" className="text-lg px-8 py-6 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/50">
-            <a href="/projects">View All Projects</a>
-          </Button>
-        </div>
+        {!showAll && projects.length > 4 && (
+          <div className="text-center mt-16">
+            <Button 
+              variant="outline" 
+              className="text-lg px-8 py-6 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-blue-50 dark:hover:bg-blue-900/50"
+              onClick={() => setShowAll(true)}
+            >
+              View More Projects ({projects.length - 4} more)
+            </Button>
+          </div>
+        )}
       </div>
 
       {selectedProject && (
