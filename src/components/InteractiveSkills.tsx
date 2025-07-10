@@ -170,7 +170,7 @@ const InteractiveSkills = () => {
                 4+ Years Experience
               </span>
               <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium">
-                50+ Projects Delivered
+                30+ Projects Delivered
               </span>
               <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium">
                 Cross-Platform Expert
