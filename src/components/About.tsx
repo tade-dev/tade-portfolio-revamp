@@ -31,7 +31,7 @@ const About = () => {
 
   const achievements = [
     { icon: Trophy, value: "4+", label: "Years Experience", color: "text-yellow-500" },
-    { icon: Target, value: "50+", label: "Projects Delivered", color: "text-blue-500" },
+    { icon: Target, value: "30+", label: "Projects Delivered", color: "text-blue-500" },
     { icon: Zap, value: "99%", label: "Client Satisfaction", color: "text-green-500" }
   ];
 
@@ -110,31 +110,6 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="space-y-6"
           >
-            {/* Skills Progress */}
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-200/50 dark:border-gray-700/50">
-              <div className="flex items-center gap-3 mb-6">
-                <Code className="text-blue-500" size={24} />
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Core Expertise</h3>
-              </div>
-              <div className="space-y-6">
-                {skills.map((skill, index) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-800 dark:text-white">{skill.name}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{skill.percentage}%</span>
-                    </div>
-                    <div className="h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div
-                        className={`h-full ${skill.color} rounded-full`}
-                        initial={{ width: 0 }}
-                        animate={isVisible ? { width: `${skill.percentage}%` } : {}}
-                        transition={{ duration: 1.2, delay: 0.6 + index * 0.2, ease: "easeOut" }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* Professional Quote */}
             <motion.div
