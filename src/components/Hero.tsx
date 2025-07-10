@@ -133,17 +133,15 @@ class PerformanceManager {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Hi, I'm <strong className="text-foreground">Akintade Oluwaseun</strong>, a passionate{' '}
+              I'm <strong className="text-foreground">Akintade Oluwaseun</strong>, a{' '}
               <span className="text-primary font-mono">
                 {typedText}
                 <span className="animate-pulse">|</span>
-              </span>{' '}
-              based in Nigeria with <strong className="text-foreground">4+ years of experience</strong> building{' '}
-              <span className="text-accent-foreground font-semibold">cross-platform mobile applications</span>.
+              </span>
               <br />
-              I specialize in creating high-performance apps using{' '}
-              <span className="text-primary font-semibold">Flutter</span>,{' '}
-              <span className="text-accent-foreground font-semibold">SwiftUI</span>, and modern mobile development technologies.
+              crafting high-performance applications with{' '}
+              <span className="text-primary font-semibold">Flutter</span> and{' '}
+              <span className="text-accent-foreground font-semibold">SwiftUI</span>.
             </motion.div>
             
             {/* Tech Stack Pills */}
