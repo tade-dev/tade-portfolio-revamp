@@ -9,80 +9,80 @@ const InteractiveSkills = () => {
       title: "Frameworks & Platforms",
       icon: <Smartphone className="h-5 w-5" />,
       skills: [
-        { name: "Flutter", level: 95, color: "bg-blue-500" },
-        { name: "SwiftUI", level: 90, color: "bg-orange-500" },
-        { name: "iOS SDK", level: 88, color: "bg-gray-600" },
-        { name: "Android SDK", level: 85, color: "bg-green-600" }
+        { name: "Flutter", color: "bg-blue-500" },
+        { name: "SwiftUI", color: "bg-orange-500" },
+        { name: "iOS SDK", color: "bg-gray-600" },
+        { name: "Android SDK", color: "bg-green-600" }
       ]
     },
     {
       title: "Languages",
       icon: <Code className="h-5 w-5" />,
       skills: [
-        { name: "Dart", level: 95, color: "bg-blue-600" },
-        { name: "Swift", level: 90, color: "bg-orange-600" },
-        { name: "JavaScript", level: 80, color: "bg-yellow-500" },
-        { name: "TypeScript", level: 75, color: "bg-blue-700" }
+        { name: "Dart", color: "bg-blue-600" },
+        { name: "Swift", color: "bg-orange-600" },
+        { name: "JavaScript", color: "bg-yellow-500" },
+        { name: "TypeScript", color: "bg-blue-700" }
       ]
     },
     {
       title: "Tools & Technologies",
       icon: <Server className="h-5 w-5" />,
       skills: [
-        { name: "Firebase", level: 95, color: "bg-orange-500" },
-        { name: "Supabase", level: 85, color: "bg-green-500" },
-        { name: "RESTful APIs", level: 95, color: "bg-purple-500" },
-        { name: "Git & CI/CD", level: 87, color: "bg-gray-700" }
+        { name: "Firebase", color: "bg-orange-500" },
+        { name: "Supabase", color: "bg-green-500" },
+        { name: "RESTful APIs", color: "bg-purple-500" },
+        { name: "Git & CI/CD", color: "bg-gray-700" }
       ]
     },
     {
       title: "UI/UX & Animations",
       icon: <Palette className="h-5 w-5" />,
       skills: [
-        { name: "Custom Animations", level: 90, color: "bg-pink-500" },
-        { name: "Material Design", level: 92, color: "bg-indigo-500" },
-        { name: "Human Interface", level: 88, color: "bg-blue-400" },
-        { name: "Responsive Design", level: 90, color: "bg-teal-500" }
+        { name: "Custom Animations", color: "bg-pink-500" },
+        { name: "Material Design", color: "bg-indigo-500" },
+        { name: "Human Interface", color: "bg-blue-400" },
+        { name: "Responsive Design", color: "bg-teal-500" }
       ]
     },
     {
       title: "State Management",
       icon: <Brain className="h-5 w-5" />,
       skills: [
-        { name: "BLoC Pattern", level: 92, color: "bg-purple-600" },
-        { name: "Provider", level: 90, color: "bg-green-600" },
-        { name: "MVVM", level: 90, color: "bg-indigo-600" },
-        { name: "GetX", level: 85, color: "bg-red-500" }
+        { name: "BLoC Pattern", color: "bg-purple-600" },
+        { name: "Provider", color: "bg-green-600" },
+        { name: "MVVM", color: "bg-indigo-600" },
+        { name: "GetX", color: "bg-red-500" }
       ]
     },
     {
       title: "Testing & Debugging",
       icon: <TestTube className="h-5 w-5" />,
       skills: [
-        { name: "Unit Testing", level: 85, color: "bg-green-500" },
-        { name: "Widget Testing", level: 80, color: "bg-blue-500" },
-        { name: "XCTest", level: 82, color: "bg-orange-500" },
-        { name: "Performance Profiling", level: 88, color: "bg-purple-500" }
+        { name: "Unit Testing", color: "bg-green-500" },
+        { name: "Widget Testing", color: "bg-blue-500" },
+        { name: "XCTest", color: "bg-orange-500" },
+        { name: "Performance Profiling", color: "bg-purple-500" }
       ]
     },
     {
       title: "Deployment & Stores",
       icon: <Upload className="h-5 w-5" />,
       skills: [
-        { name: "App Store Connect", level: 90, color: "bg-blue-600" },
-        { name: "Google Play Console", level: 92, color: "bg-green-600" },
-        { name: "TestFlight", level: 88, color: "bg-orange-600" },
-        { name: "Shorebird", level: 80, color: "bg-teal-600" }
+        { name: "App Store Connect", color: "bg-blue-600" },
+        { name: "Google Play Console", color: "bg-green-600" },
+        { name: "TestFlight", color: "bg-orange-600" },
+        { name: "Shorebird", color: "bg-teal-600" }
       ]
     },
     {
       title: "AI Integration",
       icon: <Brain className="h-5 w-5" />,
       skills: [
-        { name: "OpenAI APIs", level: 85, color: "bg-emerald-500" },
-        { name: "Claude Integration", level: 80, color: "bg-purple-500" },
-        { name: "ML Kit", level: 75, color: "bg-blue-500" },
-        { name: "Core ML", level: 70, color: "bg-orange-500" }
+        { name: "OpenAI APIs", color: "bg-emerald-500" },
+        { name: "Claude Integration", color: "bg-purple-500" },
+        { name: "ML Kit", color: "bg-blue-500" },
+        { name: "Core ML", color: "bg-orange-500" }
       ]
     }
   ];
@@ -117,31 +117,16 @@ const InteractiveSkills = () => {
                 </h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
-                    className="group"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    className={`inline-flex items-center px-3 py-2 rounded-full text-white text-sm font-medium ${skill.color} hover:scale-105 transition-transform duration-200 cursor-default`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05) }}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
-                        {skill.name}
-                      </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                      <motion.div
-                        className={`h-full rounded-full ${skill.color} transition-all duration-500 group-hover:brightness-110`}
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: (categoryIndex * 0.2) + (skillIndex * 0.1) }}
-                      />
-                    </div>
+                    {skill.name}
                   </motion.div>
                 ))}
               </div>
