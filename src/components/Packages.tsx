@@ -8,10 +8,10 @@ const Packages = () => {
       description: "A Flutter package for creating custom markers for Google Maps with enhanced styling and animation options.",
       platform: "Flutter/Dart",
       pubUrl: "https://pub.dev/packages/custom_marker_builder",
-      githubUrl: "https://github.com/tade-dev/custom_marker_builder",
-      version: "1.0.0",
-      downloads: "500+",
-      likes: "10+",
+      githubUrl: "https://github.com/tade-dev/custom_map_marker_builder",
+      version: "0.0.4",
+      downloads: "200+",
+      likes: "5",
       tags: ["Flutter", "Google Maps", "Markers", "Customization"]
     }
   ];
