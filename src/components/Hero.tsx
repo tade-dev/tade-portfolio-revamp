@@ -283,7 +283,7 @@ class PerformanceManager {
             >
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
                 <img
-                  src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
+                  src="/lovable-uploads/3bda48ac-6d7a-49fd-a7ac-30aba577de30.png"
                   alt="Akintade - Mobile Developer"
                   className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   style={{ objectPosition: 'center top' }}
