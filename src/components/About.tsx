@@ -74,8 +74,7 @@ const About = () => {
             </div>
             <div className="text-gray-600 dark:text-gray-300 leading-relaxed space-y-4">
               <p>
-                Hi! I'm <span className="font-semibold text-primary">Oluwaseun Akintade</span>, a passionate mobile developer based in Nigeria. 
-                I specialize in Flutter and SwiftUI, building scalable mobile applications that thousands of users interact with daily.
+                Hi! I'm <span className="font-semibold text-primary">Oluwaseun Akintade</span>, a passionate mobile developer based in Manchester, UK.
               </p>
               <p>
                 My journey started with curiosity about how mobile apps work and evolved into a mission to create digital experiences 
