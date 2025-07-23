@@ -79,13 +79,13 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: "+2348163421203",
-      link: "tel:+2348163421203"
+      details: "+447350163094",
+      link: "tel:+447350163094"
     },
     {
       icon: MapPin,
       title: "Location",
-      details: "Abuja, Nigeria",
+      details: "Manchester, UK",
       link: "#"
     }
   ];
