@@ -26,9 +26,7 @@ const Projects = () => {
         "/lovable-uploads/7562307a-e675-4afd-bdbc-ec326e328d8f.png",
         "/lovable-uploads/bbda8c53-3069-4e79-89f0-fe8894ff9f4a.png",
         "/lovable-uploads/5df961b1-a326-4210-9309-0040b5cacd8f.png",
-        "/lovable-uploads/6d7cda18-467a-486d-ba5d-6ecbe460a4af.png",
-        "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
-        "/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
+        "/lovable-uploads/6d7cda18-467a-486d-ba5d-6ecbe460a4af.png"
       ],
       tags: ["Flutter", "Claude AI API", "Swift", "Firebase", "Getx"],
       imageUrl: "/lovable-uploads/4a6de29a-4abe-4fb6-b076-6943cf4ab07f.png",
@@ -53,9 +51,7 @@ const Projects = () => {
         "/lovable-uploads/dd6f4bf5-e559-40de-9fd7-1e00c737112f.png",
         "/lovable-uploads/80d920cb-2f39-445a-92d6-60bb83ce4f91.png",
         "/lovable-uploads/c36e4df0-ef54-440f-9dc3-35262dab271f.png",
-        "/lovable-uploads/74023fea-5e88-49ab-b4cb-8390824f4eb4.png",
-        "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png",
-        "/lovable-uploads/9394e8c7-ccbd-497d-a2f8-d5561e05b5d3.png"
+        "/lovable-uploads/74023fea-5e88-49ab-b4cb-8390824f4eb4.png"
       ],
       tags: ["Flutter", "Google APIs", "Google Maps", "BLOC", "Firebase"],
       imageUrl: "/lovable-uploads/1b383d6b-ed6c-48ea-a22e-241d3dca578c.png",
@@ -77,6 +73,8 @@ const Projects = () => {
         users: "234"
       },
       screenshots: [
+        "/lovable-uploads/d1ad8a0e-24ec-430e-8df4-b68011d8da40.png",
+        "/lovable-uploads/d1ad8a0e-24ec-430e-8df4-b68011d8da40.png",
         "/lovable-uploads/d1ad8a0e-24ec-430e-8df4-b68011d8da40.png"
       ],
       tags: ["Flutter", "Provider", "Firebase", "RESTful APIs"],
@@ -98,9 +96,7 @@ const Projects = () => {
         "/lovable-uploads/af6079f4-34f2-4ccf-8581-71e640924a08.png",
         "/lovable-uploads/116c85f3-e7f0-4299-ab7c-b12c69ae2a1c.png",
         "/lovable-uploads/e2ca8dc5-2b0d-4d6c-846e-a7d27503aff4.png",
-        "/lovable-uploads/bc585009-fe5b-479f-87b7-b0949229e1e4.png",
-        "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
-        "/lovable-uploads/0f2ef556-5b65-40bd-ac47-0d25720af73f.png"
+        "/lovable-uploads/bc585009-fe5b-479f-87b7-b0949229e1e4.png"
       ],
       tags: ["SwiftUI", "Vapor", "PostgreSQL", "OpenAI API", "Work in Progress"],
       imageUrl: "/lovable-uploads/8248dfdc-5530-411f-87a8-99430c78c74e.png",
