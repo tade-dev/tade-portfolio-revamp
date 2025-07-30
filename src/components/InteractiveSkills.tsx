@@ -125,7 +125,7 @@ const InteractiveSkills = () => {
             <span className="text-primary text-sm font-mono">SKILL.DATABASE.LOADED</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient font-heading">
-            Neural Technical Skills Matrix
+            Technical Skills Matrix
           </h2>
           <p className="text-muted-foreground max-w-3xl mx-auto font-mono">
             &gt; SCANNING COMPREHENSIVE SKILL DATABASE...
@@ -214,7 +214,7 @@ const InteractiveSkills = () => {
 
           <div className="text-center">
             <h3 className="text-2xl font-bold text-gradient mb-4 font-mono">
-              Production-Ready Mobile Neural Engineer
+              Production-Ready Mobile Engineer
             </h3>
             <p className="text-muted-foreground max-w-4xl mx-auto leading-relaxed font-mono text-sm">
               &gt; SPECIALIZATION: Building scalable mobile applications with <span className="text-primary font-bold">Flutter</span> and <span className="text-accent font-bold">SwiftUI</span>

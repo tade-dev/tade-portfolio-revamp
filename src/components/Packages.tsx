@@ -78,14 +78,18 @@ const Packages = () => {
                 </div>
 
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 p-3 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-                    <Package2 className="w-full h-full text-primary" />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 p-3 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 hover:border-primary/40">
+                    <Package2 className="w-full h-full text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors font-mono text-foreground">
                       {pkg.name}
                     </h3>
-                    <p className="text-accent font-medium text-sm font-mono">{pkg.platform}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-accent font-medium text-sm font-mono">{pkg.platform}</p>
+                      <div className="w-1 h-1 bg-accent rounded-full"></div>
+                      <span className="text-primary text-xs font-mono">v{pkg.version}</span>
+                    </div>
                   </div>
                 </div>
                 

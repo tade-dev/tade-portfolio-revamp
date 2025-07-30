@@ -78,7 +78,7 @@ const Hero = () => {
   };
 
   const openResume = () => {
-    window.open('https://drive.google.com/file/d/18-qbXo3Zb-uz5tVHQCFkYfX_jfdXZVvL/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1Xjon98a9D-HaCrmmX5TPMqM92dzjG8-G/view?usp=sharing', '_blank');
   };
 
   return (
@@ -145,7 +145,7 @@ const Hero = () => {
               &gt; <strong className="text-foreground">SPECIALIZATION:</strong>{' '}
               <span className="text-primary">Flutter</span> |{' '}
               <span className="text-accent">SwiftUI</span> |{' '}
-              <span className="text-primary">Native Mobile</span>
+              <span className="text-primary">Mobile Architecture</span>
             </motion.div>
             
             {/* System Performance */}

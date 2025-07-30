@@ -65,7 +65,7 @@ const Footer = () => {
             >
               &gt; SPECIALIZED IN DELIVERING HIGH-QUALITY MOBILE APPLICATIONS
               <br />
-              &gt; FLUTTER | SWIFT | NEURAL MOBILE ARCHITECTURE
+              &gt; FLUTTER | SWIFT | MOBILE ARCHITECTURE
             </motion.p>
           </motion.div>
           
