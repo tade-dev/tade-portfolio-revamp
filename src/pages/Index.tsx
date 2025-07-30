@@ -7,7 +7,7 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Packages from '@/components/Packages';
 import Testimonials from '@/components/Testimonials';
-import Contact from '@/components/Contact';
+
 import Footer from '@/components/Footer';
 import InteractiveSkills from '@/components/InteractiveSkills';
 import TechStackCarousel from '@/components/TechStackCarousel';
@@ -27,7 +27,7 @@ const Index = () => {
       <Packages />
       <About />
       <Testimonials />
-      <Contact />
+      
       <Footer />
       <FloatingCTA />
     </div>
