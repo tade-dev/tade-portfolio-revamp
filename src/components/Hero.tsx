@@ -74,10 +74,7 @@ const Hero = () => {
   }, [currentCommand]);
 
   const scrollToContact = () => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = 'mailto:hi@tade.me';
   };
 
   const openResume = () => {
