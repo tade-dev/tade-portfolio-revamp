@@ -1,60 +1,45 @@
 
-import { ArrowRight, FileText, Code, Terminal, Smartphone, Zap } from 'lucide-react';
+import { ArrowRight, FileText, Code, Terminal, Smartphone, Zap, ChevronRight, Play, Cpu, Wifi, Signal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const Hero = () => {
-  const [currentCode, setCurrentCode] = useState(0);
+  const [currentCommand, setCurrentCommand] = useState(0);
   const [typedText, setTypedText] = useState('');
+  const [commandOutput, setCommandOutput] = useState('');
 
-  const codeSnippets = [
-    `// Flutter Widget
-Widget build(BuildContext context) {
-  return Scaffold(
-    body: AnimatedContainer(
-      duration: Duration(milliseconds: 300),
-      child: Column(children: [...]),
-    ),
-  );
-}`,
-    `// SwiftUI View
-struct ContentView: View {
-  @State private var isAnimating = false
-  
-  var body: some View {
-    VStack {
-      Text("Hello World")
-        .animation(.spring(), value: isAnimating)
+  const terminalCommands = [
+    {
+      command: '$ system.initialize --mode=developer',
+      output: 'Loading neural pathways...\n✓ Flutter SDK activated\n✓ SwiftUI environment ready\n✓ Mobile architecture online'
+    },
+    {
+      command: '$ skills.analyze --expertise=mobile',
+      output: 'Scanning capabilities...\n✓ Cross-platform development: 95%\n✓ Native iOS: 92%\n✓ Performance optimization: 98%'
+    },
+    {
+      command: '$ portfolio.deploy --showcase=true',
+      output: 'Deploying showcase...\n✓ Projects compiled\n✓ Testimonials verified\n✓ Ready for collaboration'
     }
-  }
-}`,
-    `// Performance Optimization
-class PerformanceManager {
-  static optimize() {
-    // Memory management
-    // Lazy loading
-    // Efficient rendering
-  }
-}`
   ];
 
-  const techStack = [
-    { name: 'Flutter', color: 'text-primary', icon: '🚀' },
-    { name: 'SwiftUI', color: 'text-secondary-foreground', icon: '📱' },
-    { name: 'Dart', color: 'text-primary', icon: '⚡' },
-    { name: 'Swift', color: 'text-accent-foreground', icon: '🔥' }
+  const systemStats = [
+    { label: 'CPU: Flutter Engine', value: '98%', color: 'text-primary' },
+    { label: 'RAM: Swift Memory', value: '94%', color: 'text-accent' },
+    { label: 'NET: Mobile Protocols', value: '99%', color: 'text-primary' },
+    { label: 'GPU: UI Rendering', value: '96%', color: 'text-accent' }
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCode((prev) => (prev + 1) % codeSnippets.length);
-    }, 4000);
+      setCurrentCommand((prev) => (prev + 1) % terminalCommands.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    const text = "Mobile Developer";
+    const text = "NEURAL_NET_DEVELOPER";
     let index = 0;
     setTypedText('');
     
@@ -65,10 +50,27 @@ class PerformanceManager {
       } else {
         clearInterval(typeInterval);
       }
-    }, 100);
+    }, 80);
 
     return () => clearInterval(typeInterval);
   }, []);
+
+  useEffect(() => {
+    const currentCmd = terminalCommands[currentCommand];
+    setCommandOutput('');
+    
+    let index = 0;
+    const outputInterval = setInterval(() => {
+      if (index < currentCmd.output.length) {
+        setCommandOutput(currentCmd.output.slice(0, index + 1));
+        index++;
+      } else {
+        clearInterval(outputInterval);
+      }
+    }, 30);
+
+    return () => clearInterval(outputInterval);
+  }, [currentCommand]);
 
   const scrollToContact = () => {
     const contactSection = document.querySelector('#contact');
@@ -102,64 +104,83 @@ class PerformanceManager {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Tech label */}
+            {/* System Status */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6"
+              className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6 glow-effect"
             >
-              <Terminal className="w-4 h-4 text-primary" />
-              <span className="text-primary text-sm font-medium">Senior Mobile Engineer</span>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <Terminal className="w-4 h-4 text-primary" />
+                <span className="text-primary text-sm font-medium font-mono">SYSTEM.ONLINE</span>
+              </div>
             </motion.div>
 
             <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-8 leading-tight font-heading text-foreground"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 lg:mb-8 leading-tight font-heading"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Building{' '}
-              <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-                Next-Gen
+              NEURAL{' '}
+              <span className="text-gradient bg-gradient-to-r from-primary via-accent to-primary bg-clip-text">
+                INTERFACE
               </span>{' '}
               <br />
-              Mobile Apps
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-mono">
+                [ Mobile Developer ]
+              </span>
             </motion.h1>
             
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+              className="text-lg sm:text-xl text-muted-foreground mb-8 lg:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-mono"
             >
-              I'm <strong className="text-foreground">Akintade Oluwaseun</strong>, a{' '}
-              <span className="text-primary font-mono">
+              &gt; <strong className="text-foreground">IDENTITY:</strong> Akintade Oluwaseun
+              <br />
+              &gt; <strong className="text-foreground">ROLE:</strong>{' '}
+              <span className="text-primary">
                 {typedText}
-                <span className="animate-pulse">|</span>
+                <span className="animate-pulse text-accent">█</span>
               </span>
               <br />
-              crafting high-performance applications with{' '}
-              <span className="text-primary font-semibold">Flutter</span> and{' '}
-              <span className="text-accent-foreground font-semibold">SwiftUI</span>.
+              &gt; <strong className="text-foreground">SPECIALIZATION:</strong>{' '}
+              <span className="text-primary">Flutter</span> |{' '}
+              <span className="text-accent">SwiftUI</span> |{' '}
+              <span className="text-primary">Native Mobile</span>
             </motion.div>
             
-            {/* Tech Stack Pills */}
+            {/* System Performance */}
             <motion.div 
-              className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 lg:mb-12"
+              className="grid grid-cols-2 gap-4 mb-8 lg:mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              {techStack.map((tech, index) => (
+              {systemStats.map((stat, index) => (
                 <motion.div
-                  key={tech.name}
-                  className="flex items-center gap-2 bg-muted/50 border border-border rounded-full px-4 py-2 backdrop-blur-sm"
-                  whileHover={{ scale: 1.05, backgroundColor: 'hsl(var(--primary) / 0.1)' }}
-                  transition={{ duration: 0.2 }}
+                  key={stat.label}
+                  className="bg-muted/20 backdrop-blur-sm border border-border/50 rounded-lg p-3"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
                 >
-                  <span className="text-lg">{tech.icon}</span>
-                  <span className={`text-sm font-medium ${tech.color}`}>{tech.name}</span>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-muted-foreground">{stat.label}</span>
+                    <span className={`text-sm font-bold ${stat.color}`}>{stat.value}</span>
+                  </div>
+                  <div className="w-full bg-border/30 rounded-full h-1 mt-2">
+                    <motion.div 
+                      className={`h-1 rounded-full bg-gradient-to-r from-primary to-accent`}
+                      initial={{ width: 0 }}
+                      animate={{ width: stat.value }}
+                      transition={{ duration: 1, delay: 1 + index * 0.1 }}
+                    />
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -195,131 +216,185 @@ class PerformanceManager {
             </motion.div>
           </motion.div>
           
-          {/* Code Display & Profile */}
+          {/* Holographic Terminal Interface */}
           <motion.div 
             className="relative max-w-lg mx-auto"
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Code Editor Window - Hidden on mobile */}
-            <div className="relative bg-muted/90 backdrop-blur-sm border border-border rounded-2xl overflow-hidden shadow-2xl mb-8 hidden md:block">
-              {/* Window Header */}
-              <div className="flex items-center gap-2 px-4 py-3 bg-muted border-b border-border">
+            {/* Terminal Window */}
+            <div className="relative bg-black/90 backdrop-blur-sm border border-primary/20 rounded-xl overflow-hidden shadow-2xl mb-8 glow-effect">
+              {/* Terminal Header */}
+              <div className="flex items-center gap-2 px-4 py-3 bg-black/80 border-b border-primary/20">
                 <div className="flex gap-2">
-                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-red-500/80 rounded-full animate-pulse"></div>
+                  <div className="w-3 h-3 bg-yellow-500/80 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                  <div className="w-3 h-3 bg-green-500/80 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
                 </div>
                 <div className="flex items-center gap-2 ml-4">
-                  <Code className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-muted-foreground text-sm font-mono">mobile_app.{currentCode === 0 ? 'dart' : currentCode === 1 ? 'swift' : 'js'}</span>
+                  <Terminal className="w-4 h-4 text-primary" />
+                  <span className="text-primary text-sm font-mono">neural_interface.exe</span>
+                </div>
+                <div className="ml-auto flex items-center gap-2">
+                  <Cpu className="w-4 h-4 text-accent animate-pulse" />
+                  <Wifi className="w-4 h-4 text-primary" />
+                  <Signal className="w-4 h-4 text-primary" />
                 </div>
               </div>
               
-              {/* Code Content */}
-              <div className="p-4 h-64 overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.pre
-                    key={currentCode}
-                    className="text-sm text-muted-foreground font-mono leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
+              {/* Terminal Content */}
+              <div className="p-4 h-80 overflow-hidden bg-black/40">
+                <div className="mb-4">
+                  <motion.div
+                    className="text-primary font-mono text-sm mb-2"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1 }}
                   >
-                    <code>{codeSnippets[currentCode]}</code>
-                  </motion.pre>
+                    <span className="text-accent">user@neural-dev:~$</span> whoami
+                  </motion.div>
+                  <motion.div
+                    className="text-muted-foreground font-mono text-sm mb-4 pl-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1.5 }}
+                  >
+                    akintade_oluwaseun [mobile_architect] [neural_interface_v2.1]
+                  </motion.div>
+                </div>
+
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentCommand}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <div className="text-primary font-mono text-sm mb-2">
+                      <span className="text-accent">user@neural-dev:~$</span> {terminalCommands[currentCommand].command}
+                    </div>
+                    <motion.pre
+                      className="text-muted-foreground font-mono text-xs leading-relaxed pl-4 whitespace-pre-wrap"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {commandOutput}
+                    </motion.pre>
+                  </motion.div>
                 </AnimatePresence>
+
+                {/* Cursor */}
+                <motion.div
+                  className="inline-block w-2 h-4 bg-primary mt-4"
+                  animate={{ opacity: [1, 0, 1] }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
               </div>
             </div>
 
-            {/* Mobile Tech Showcase - Visible only on mobile */}
+            {/* Mobile Stats Grid - Visible only on mobile */}
             <div className="md:hidden mb-8">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 <motion.div
-                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-lg p-3 text-center"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 >
-                  <Smartphone className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-semibold text-primary">Flutter</span>
+                  <Terminal className="w-6 h-6 text-primary mx-auto mb-1" />
+                  <span className="text-xs font-mono text-primary">ACTIVE</span>
                 </motion.div>
                 
                 <motion.div
-                  className="bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-xl p-4 text-center"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-lg p-3 text-center"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 >
-                  <Code className="w-8 h-8 text-accent mx-auto mb-2" />
-                  <span className="text-sm font-semibold text-accent">SwiftUI</span>
+                  <Cpu className="w-6 h-6 text-accent mx-auto mb-1" />
+                  <span className="text-xs font-mono text-accent">98%</span>
                 </motion.div>
                 
                 <motion.div
-                  className="bg-muted/50 backdrop-blur-sm border border-border rounded-xl p-4 text-center"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-lg p-3 text-center"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 >
-                  <Terminal className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
-                  <span className="text-sm font-semibold text-muted-foreground">Native</span>
+                  <Wifi className="w-6 h-6 text-primary mx-auto mb-1" />
+                  <span className="text-xs font-mono text-primary">ONLINE</span>
                 </motion.div>
                 
                 <motion.div
-                  className="bg-primary/10 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className="bg-accent/10 backdrop-blur-sm border border-accent/20 rounded-lg p-3 text-center"
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
                 >
-                  <Zap className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <span className="text-sm font-semibold text-primary">Fast</span>
+                  <Signal className="w-6 h-6 text-accent mx-auto mb-1" />
+                  <span className="text-xs font-mono text-accent">STRONG</span>
                 </motion.div>
               </div>
             </div>
 
-            {/* Profile Image */}
+            {/* Holographic Profile Display */}
             <motion.div 
               className="relative group mx-auto w-64 h-64"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20">
-                <img
-                  src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
-                  alt="Akintade - Mobile Developer"
-                  className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ objectPosition: 'center top' }}
-                  decoding="async"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+              {/* Holographic Frame */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 backdrop-blur-sm">
+                <div className="absolute inset-2 rounded-xl overflow-hidden">
+                  <img
+                    src="/lovable-uploads/e46c35fc-511f-4e9b-888f-4fb6b81b4c12.png"
+                    alt="Akintade - Neural Interface Developer"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    style={{ objectPosition: 'center top' }}
+                    decoding="async"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10" />
+                  
+                  {/* Scanning Lines Effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-transparent h-8"
+                    animate={{ y: [-32, 288] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
               </div>
               
-              {/* Status Badge */}
+              {/* Status Indicators */}
               <motion.div
-                className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2"
-                animate={{ y: [0, -5, 0] }}
+                className="absolute -top-3 -right-3 bg-primary/90 backdrop-blur-sm text-primary-foreground px-3 py-1 rounded-lg text-xs font-mono shadow-lg flex items-center gap-2 animated-border"
+                animate={{ y: [0, -2, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <div className="w-2 h-2 bg-primary-foreground rounded-full animate-pulse"></div>
-                Available
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                NEURAL.ACTIVE
               </motion.div>
               
-              {/* Floating Tech Icons */}
+              {/* Floating Data Points */}
               <motion.div
-                className="absolute -bottom-4 -left-4 bg-primary/90 backdrop-blur-sm text-primary-foreground px-4 py-3 rounded-xl shadow-lg flex items-center gap-2"
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -bottom-4 -left-4 bg-accent/90 backdrop-blur-sm text-accent-foreground px-3 py-2 rounded-lg text-xs font-mono shadow-lg"
+                animate={{ x: [0, 3, 0], rotate: [0, 1, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Smartphone className="w-5 h-5" />
-                <span className="font-semibold text-sm">Flutter Dev</span>
+                <div className="flex items-center gap-2">
+                  <Smartphone className="w-4 h-4" />
+                  <span>FLUTTER.DEV</span>
+                </div>
               </motion.div>
               
               <motion.div
-                className="absolute top-1/4 -right-6 bg-accent/90 backdrop-blur-sm text-accent-foreground px-4 py-3 rounded-xl shadow-lg flex items-center gap-2"
-                animate={{ x: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                className="absolute top-1/4 -right-6 bg-primary/90 backdrop-blur-sm text-primary-foreground px-3 py-2 rounded-lg text-xs font-mono shadow-lg"
+                animate={{ x: [0, -3, 0], rotate: [0, -1, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
               >
-                <Code className="w-5 h-5" />
-                <span className="font-semibold text-sm">iOS Expert</span>
+                <div className="flex items-center gap-2">
+                  <Code className="w-4 h-4" />
+                  <span>iOS.EXPERT</span>
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>
