@@ -1,4 +1,5 @@
 
+// Neural Interface Hero Component
 import { ArrowRight, FileText, Code, Terminal, Smartphone, Zap, ChevronRight, Play, Cpu, Wifi, Signal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
