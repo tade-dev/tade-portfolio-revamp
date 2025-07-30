@@ -73,7 +73,7 @@ const TechStackCarousel = () => {
             <Terminal className="w-4 h-4 text-primary" />
             <span className="text-primary text-sm font-mono">TECH.STACK.LOADED</span>
           </div>
-          <h3 className="text-3xl md:text-4xl font-bold text-gradient mb-4 font-heading">Neural Technology Matrix</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-gradient mb-4 font-heading">Mobile Technology Matrix</h3>
           <p className="text-muted-foreground font-mono max-w-2xl mx-auto">
             &gt; SCANNING ACTIVE NEURAL PATHWAYS...
             <br />

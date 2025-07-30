@@ -1,5 +1,7 @@
-import { ExternalLink, Github, Star, Download, Package2 } from "lucide-react";
+// Neural Package Repository
+import { ExternalLink, Github, Star, Download, Package2, Terminal, Code, Database } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { motion } from "framer-motion";
 
 const Packages = () => {
   const packages = [
@@ -12,98 +14,178 @@ const Packages = () => {
       version: "0.0.4",
       downloads: "200+",
       likes: "5",
-      tags: ["Flutter", "Google Maps", "Markers", "Customization"]
+      tags: ["Flutter", "Google Maps", "Markers", "Customization"],
+      status: "ACTIVE",
+      neural_id: "PKG_001"
     }
   ];
 
   return (
-    <section id="packages" className="bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 dark:from-blue-900/30 dark:via-gray-800 dark:to-purple-900/30 section-spacing">
-      <div className="container max-w-7xl mx-auto px-8">
-        <h2 className="text-3xl md:text-4xl font-medium mb-3 text-center bg-gradient-to-r from-gray-800 via-gray-900 to-purple-800 dark:from-gray-100 dark:via-gray-200 dark:to-purple-200 bg-clip-text text-transparent font-heading">
-          Open Source Packages
-        </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-center mb-16 max-w-2xl mx-auto">
-          Flutter and Swift packages I've developed and published to help the developer community.
-        </p>
+    <section id="packages" className="bg-gradient-to-br from-background via-muted/10 to-background section-spacing relative overflow-hidden">
+      {/* Neural Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      <div className="container max-w-7xl mx-auto px-8 relative z-10">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-4 glow-effect">
+            <Package2 className="w-4 h-4 text-primary" />
+            <span className="text-primary text-sm font-mono">PACKAGE.REPOSITORY.LOADED</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient font-heading">
+            Open Source Neural Packages
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto font-mono">
+            &gt; SCANNING OPEN SOURCE CONTRIBUTIONS...
+            <br />
+            &gt; COMMUNITY_IMPACT: ENHANCED | DEVELOPER_TOOLS: OPTIMIZED
+          </p>
+        </motion.div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg, index) => (
-            <div 
+            <motion.div 
               key={index}
-              className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200/50 dark:border-gray-700/50 shadow-lg hover:shadow-2xl transition-all duration-500 group hover:border-purple-300/50 hover:-translate-y-2"
+              className="bg-black/20 backdrop-blur-sm border border-primary/20 rounded-2xl overflow-hidden shadow-lg hover:border-primary/40 transition-all duration-500 group hover:-translate-y-2 glow-effect"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
             >
               <div className="p-8">
+                {/* Neural Package Header */}
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <Terminal className="w-4 h-4 text-primary" />
+                    <span className="text-primary text-xs font-mono">{pkg.neural_id}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-accent text-xs font-mono">{pkg.status}</span>
+                  </div>
+                </div>
+
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/50 dark:to-blue-900/50 p-3 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
-                    <Package2 className="w-full h-full text-purple-600 dark:text-purple-400" />
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 p-3 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <Package2 className="w-full h-full text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-1 group-hover:text-purple-600 transition-colors font-heading">
+                    <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors font-mono text-foreground">
                       {pkg.name}
                     </h3>
-                    <p className="text-purple-600 dark:text-purple-400 font-medium text-sm">{pkg.platform}</p>
+                    <p className="text-accent font-medium text-sm font-mono">{pkg.platform}</p>
                   </div>
                 </div>
                 
-                <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                  {pkg.description}
+                <p className="text-muted-foreground mb-6 leading-relaxed font-mono text-sm">
+                  &gt; {pkg.description}
                 </p>
 
-                {/* Package Stats */}
+                {/* Neural Package Metrics */}
                 <div className="flex flex-wrap gap-3 mb-6">
                   {pkg.downloads && (
-                    <Badge variant="secondary" className="flex items-center gap-1">
+                    <motion.div 
+                      className="flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-mono border border-primary/20"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       <Download className="w-3 h-3" />
                       {pkg.downloads}
-                    </Badge>
+                    </motion.div>
                   )}
                   {pkg.likes && (
-                    <Badge variant="secondary" className="flex items-center gap-1">
+                    <motion.div 
+                      className="flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-mono border border-accent/20"
+                      whileHover={{ scale: 1.05 }}
+                    >
                       <Star className="w-3 h-3" />
                       {pkg.likes}
-                    </Badge>
+                    </motion.div>
                   )}
-                  <Badge variant="outline" className="text-xs">
+                  <Badge variant="outline" className="text-xs font-mono border-border/50">
                     v{pkg.version}
                   </Badge>
                 </div>
                 
+                {/* Neural Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {pkg.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="px-3 py-1.5 rounded-full text-xs font-medium border bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/50 dark:to-blue-900/50 text-purple-700 dark:text-purple-300 border-purple-200/50 dark:border-purple-700/50 hover:border-purple-300/50 transition-colors"
+                      className="px-3 py-1.5 rounded-lg text-xs font-mono border bg-muted/20 text-muted-foreground border-border/30 hover:border-primary/40 hover:text-primary transition-colors"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
                 
+                {/* Neural Action Links */}
                 <div className="flex gap-3">
-                  <a
+                  <motion.a
                     href={pkg.pubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-sm font-medium transition-colors flex-1 justify-center"
+                    className="flex items-center gap-2 px-4 py-3 bg-primary/90 hover:bg-primary text-primary-foreground rounded-xl text-sm font-mono transition-colors flex-1 justify-center shadow-lg"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <ExternalLink className="w-4 h-4" />
-                    pub.dev
-                  </a>
+                    PUB.DEV
+                  </motion.a>
                   {pkg.githubUrl && (
-                    <a
+                    <motion.a
                       href={pkg.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                      className="flex items-center gap-2 px-4 py-3 border border-primary/30 text-primary rounded-xl text-sm font-mono hover:bg-primary/10 transition-colors bg-black/20"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                     >
                       <Github className="w-4 h-4" />
-                    </a>
+                    </motion.a>
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Neural Repository Stats */}
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          {[
+            { icon: Code, label: 'PACKAGES', value: '1+' },
+            { icon: Download, label: 'DOWNLOADS', value: '200+' },
+            { icon: Star, label: 'STARS', value: '5+' },
+            { icon: Database, label: 'PLATFORMS', value: '2' }
+          ].map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              className="bg-muted/20 backdrop-blur-sm border border-border/50 rounded-lg p-4 text-center hover:border-primary/30 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+            >
+              <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+              <div className="text-lg font-bold text-foreground font-mono">{stat.value}</div>
+              <div className="text-xs text-muted-foreground font-mono">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

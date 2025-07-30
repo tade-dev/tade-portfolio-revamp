@@ -172,7 +172,7 @@ const Projects = () => {
             <span className="text-primary text-sm font-mono">PROJECT.ARCHIVE.LOADED</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient font-heading">
-            Featured Neural Projects
+            Featured Projects
           </h2>
           <p className="text-muted-foreground text-center mb-16 max-w-2xl mx-auto font-mono">
             &gt; SCANNING PROJECT DATABASE...

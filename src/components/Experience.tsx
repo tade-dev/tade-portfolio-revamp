@@ -8,7 +8,7 @@ const Experience = () => {
   const neuralTimeline = [
     {
       year: "September 2024 - Present",
-      title: "Mobile Neural Engineer",
+      title: "Mobile Engineer",
       company: "Zabira Technologies",
       companyLink: "https://www.zabira.com",
       location: "Lagos, Nigeria (Remote Neural Link)",
@@ -23,7 +23,7 @@ const Experience = () => {
     },
     {
       year: "November 2022 - July 2024",
-      title: "Lead Mobile Neural Architect",
+      title: "Lead Mobile Developer",
       company: "Scnip Capitol Ltd",
       companyLink: "https://www.scnip.com",
       location: "Abuja, Nigeria (Hybrid Neural Interface)",
@@ -62,7 +62,7 @@ const Experience = () => {
             <span className="text-primary text-sm font-mono">EXPERIENCE.ARCHIVE.LOADED</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient font-heading">
-            Neural Experience Matrix
+            Mobile Experience Matrix
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-mono">
             &gt; SCANNING PROFESSIONAL NEURAL PATHWAYS...

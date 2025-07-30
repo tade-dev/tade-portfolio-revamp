@@ -122,13 +122,9 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              NEURAL{' '}
+              MOBILE{' '}
               <span className="text-gradient bg-gradient-to-r from-primary via-accent to-primary bg-clip-text">
-                INTERFACE
-              </span>{' '}
-              <br />
-              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-mono">
-                [ Mobile Developer ]
+                ENGINEER
               </span>
             </motion.h1>
             
@@ -142,7 +138,7 @@ const Hero = () => {
               <br />
               &gt; <strong className="text-foreground">ROLE:</strong>{' '}
               <span className="text-primary">
-                {typedText}
+                MOBILE_APP_DEVELOPER
                 <span className="animate-pulse text-accent">█</span>
               </span>
               <br />
